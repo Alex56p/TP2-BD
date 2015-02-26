@@ -152,6 +152,7 @@
             this.BTN_DetailsClassement.TabIndex = 9;
             this.BTN_DetailsClassement.Text = "Détails...";
             this.BTN_DetailsClassement.UseVisualStyleBackColor = true;
+            this.BTN_DetailsClassement.Click += new System.EventHandler(this.BTN_DetailsClassement_Click);
             // 
             // label11
             // 

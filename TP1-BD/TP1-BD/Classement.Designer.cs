@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.BTN_Ok = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Stats = new System.Windows.Forms.DataGridView();
             this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,14 +63,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_3rd)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // BTN_Ok
             // 
-            this.button1.Location = new System.Drawing.Point(442, 569);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_Ok.Location = new System.Drawing.Point(442, 569);
+            this.BTN_Ok.Name = "BTN_Ok";
+            this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Ok.TabIndex = 20;
+            this.BTN_Ok.Text = "Ok";
+            this.BTN_Ok.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -292,7 +293,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 606);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_Stats);
             this.Controls.Add(this.groupBox2);
@@ -320,7 +321,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_Ok;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGV_Stats;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alias;

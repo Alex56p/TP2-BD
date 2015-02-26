@@ -42,7 +42,7 @@
             // BTN_Ok
             // 
             this.BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ok.Location = new System.Drawing.Point(182, 191);
+            this.BTN_Ok.Location = new System.Drawing.Point(186, 143);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
             this.BTN_Ok.TabIndex = 21;
@@ -113,7 +113,7 @@
             // BTN_Annuler
             // 
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(101, 191);
+            this.BTN_Annuler.Location = new System.Drawing.Point(105, 143);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
             this.BTN_Annuler.TabIndex = 22;
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 223);
+            this.ClientSize = new System.Drawing.Size(273, 176);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.TB_Prenom);

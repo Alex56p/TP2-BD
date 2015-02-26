@@ -14,7 +14,23 @@ namespace TP1_BD
     {
         public Jeu()
         {
-            InitializeComponent();
+            Joueurs joueurs = new Joueurs();
+            joueurs.ShowDialog();
+            if(joueurs.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                InitializeComponent();
+            }
+            else
+            {
+                this.Close();
+            }
+
+        }
+
+        private void BTN_DetailsClassement_Click(object sender, EventArgs e)
+        {
+            DetailsMatch detailsMatch = new DetailsMatch();
+            detailsMatch.ShowDialog();
         }
     }
 }

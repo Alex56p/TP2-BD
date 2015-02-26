@@ -16,7 +16,7 @@ namespace TP1_BD
       {
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
-         Application.Run(new Connexion());
+         Application.Run(new MenuPrincipal());
       }
    }
 }

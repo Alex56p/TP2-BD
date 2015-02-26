@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace TP1_BD
 {
-    public partial class DetailsMatch : Form
+    public partial class Joueurs : Form
     {
-        public DetailsMatch()
+        public Joueurs()
         {
             InitializeComponent();
         }
 
-        private void BTN_Statistiques_Click(object sender, EventArgs e)
+        private void BTN_CreerJoueur_Click(object sender, EventArgs e)
         {
-            StatsJoueur stats = new StatsJoueur();
-            stats.ShowDialog();
+            Inscription inscription = new Inscription();
+            inscription.ShowDialog();
+        }
+
+        private void BTN_CommencerPartie_Click(object sender, EventArgs e)
+        {
         }
     }
 }

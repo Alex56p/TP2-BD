@@ -70,6 +70,7 @@
             this.BTN_Statistiques.TabIndex = 42;
             this.BTN_Statistiques.Text = "Voir les Statistiques du Joueur...";
             this.BTN_Statistiques.UseVisualStyleBackColor = true;
+            this.BTN_Statistiques.Click += new System.EventHandler(this.BTN_Statistiques_Click);
             // 
             // groupBox1
             // 
