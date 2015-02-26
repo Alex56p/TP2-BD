@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TP1_BD
 {
-   public partial class Form1 : Form
-   {
-      public Form1()
-      {
-         InitializeComponent();
-      }
-   }
+    public partial class DetailsMatch : Form
+    {
+        public DetailsMatch()
+        {
+            InitializeComponent();
+        }
+    }
 }

@@ -44,16 +44,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AjouterQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AjouterQuestion.Designer.cs">
+      <DependentUpon>AjouterQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classement.Designer.cs">
+      <DependentUpon>Classement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailsMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailsMatch.Designer.cs">
+      <DependentUpon>DetailsMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jeu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jeu.Designer.cs">
+      <DependentUpon>Jeu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="RepondreQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepondreQuestion.Designer.cs">
+      <DependentUpon>RepondreQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatsJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatsJoueur.Designer.cs">
+      <DependentUpon>StatsJoueur.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AjouterQuestion.resx">
+      <DependentUpon>AjouterQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classement.resx">
+      <DependentUpon>Classement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailsMatch.resx">
+      <DependentUpon>DetailsMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jeu.resx">
+      <DependentUpon>Jeu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,6 +121,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RepondreQuestion.resx">
+      <DependentUpon>RepondreQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatsJoueur.resx">
+      <DependentUpon>StatsJoueur.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
