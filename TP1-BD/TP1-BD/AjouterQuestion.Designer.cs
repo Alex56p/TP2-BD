@@ -28,61 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BTN_Annuler = new System.Windows.Forms.Button();
+            this.BTN_AjouterQuestion = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.BTN_InfoRB = new System.Windows.Forms.Button();
+            this.RB_Reponse2 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.RB_Reponse3 = new System.Windows.Forms.RadioButton();
+            this.RB_Reponse4 = new System.Windows.Forms.RadioButton();
+            this.RB_Reponse1 = new System.Windows.Forms.RadioButton();
+            this.TB_Reponse1 = new System.Windows.Forms.TextBox();
+            this.TB_Reponse3 = new System.Windows.Forms.TextBox();
+            this.TB_Reponse2 = new System.Windows.Forms.TextBox();
+            this.TB_Reponse4 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TB_Question = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // BTN_Annuler
             // 
-            this.button3.Location = new System.Drawing.Point(282, 333);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(61, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Annuler";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTN_Annuler.Location = new System.Drawing.Point(282, 333);
+            this.BTN_Annuler.Name = "BTN_Annuler";
+            this.BTN_Annuler.Size = new System.Drawing.Size(61, 23);
+            this.BTN_Annuler.TabIndex = 17;
+            this.BTN_Annuler.Text = "Annuler";
+            this.BTN_Annuler.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BTN_AjouterQuestion
             // 
-            this.button2.Location = new System.Drawing.Point(349, 333);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Ajouter la Question";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_AjouterQuestion.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_AjouterQuestion.Location = new System.Drawing.Point(349, 333);
+            this.BTN_AjouterQuestion.Name = "BTN_AjouterQuestion";
+            this.BTN_AjouterQuestion.Size = new System.Drawing.Size(112, 23);
+            this.BTN_AjouterQuestion.TabIndex = 16;
+            this.BTN_AjouterQuestion.Text = "Ajouter la Question";
+            this.BTN_AjouterQuestion.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.BTN_InfoRB);
+            this.groupBox1.Controls.Add(this.RB_Reponse2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.RB_Reponse3);
+            this.groupBox1.Controls.Add(this.RB_Reponse4);
+            this.groupBox1.Controls.Add(this.RB_Reponse1);
+            this.groupBox1.Controls.Add(this.TB_Reponse1);
+            this.groupBox1.Controls.Add(this.TB_Reponse3);
+            this.groupBox1.Controls.Add(this.TB_Reponse2);
+            this.groupBox1.Controls.Add(this.TB_Reponse4);
             this.groupBox1.Location = new System.Drawing.Point(12, 135);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(449, 164);
@@ -108,24 +110,24 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Réponse :";
             // 
-            // button1
+            // BTN_InfoRB
             // 
-            this.button1.Location = new System.Drawing.Point(428, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(14, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "?";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTN_InfoRB.Location = new System.Drawing.Point(428, 16);
+            this.BTN_InfoRB.Name = "BTN_InfoRB";
+            this.BTN_InfoRB.Size = new System.Drawing.Size(14, 23);
+            this.BTN_InfoRB.TabIndex = 13;
+            this.BTN_InfoRB.Text = "?";
+            this.BTN_InfoRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // RB_Reponse2
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(427, 73);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(14, 13);
-            this.radioButton4.TabIndex = 12;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.RB_Reponse2.AutoSize = true;
+            this.RB_Reponse2.Location = new System.Drawing.Point(427, 73);
+            this.RB_Reponse2.Name = "RB_Reponse2";
+            this.RB_Reponse2.Size = new System.Drawing.Size(14, 13);
+            this.RB_Reponse2.TabIndex = 12;
+            this.RB_Reponse2.TabStop = true;
+            this.RB_Reponse2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -145,63 +147,63 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Réponse :";
             // 
-            // radioButton3
+            // RB_Reponse3
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(428, 99);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 11;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.RB_Reponse3.AutoSize = true;
+            this.RB_Reponse3.Location = new System.Drawing.Point(428, 99);
+            this.RB_Reponse3.Name = "RB_Reponse3";
+            this.RB_Reponse3.Size = new System.Drawing.Size(14, 13);
+            this.RB_Reponse3.TabIndex = 11;
+            this.RB_Reponse3.TabStop = true;
+            this.RB_Reponse3.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // RB_Reponse4
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(428, 125);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.RB_Reponse4.AutoSize = true;
+            this.RB_Reponse4.Location = new System.Drawing.Point(428, 125);
+            this.RB_Reponse4.Name = "RB_Reponse4";
+            this.RB_Reponse4.Size = new System.Drawing.Size(14, 13);
+            this.RB_Reponse4.TabIndex = 10;
+            this.RB_Reponse4.TabStop = true;
+            this.RB_Reponse4.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // RB_Reponse1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(428, 45);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 9;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.RB_Reponse1.AutoSize = true;
+            this.RB_Reponse1.Location = new System.Drawing.Point(428, 45);
+            this.RB_Reponse1.Name = "RB_Reponse1";
+            this.RB_Reponse1.Size = new System.Drawing.Size(14, 13);
+            this.RB_Reponse1.TabIndex = 9;
+            this.RB_Reponse1.TabStop = true;
+            this.RB_Reponse1.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // TB_Reponse1
             // 
-            this.textBox5.Location = new System.Drawing.Point(82, 44);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(339, 20);
-            this.textBox5.TabIndex = 8;
+            this.TB_Reponse1.Location = new System.Drawing.Point(82, 44);
+            this.TB_Reponse1.Name = "TB_Reponse1";
+            this.TB_Reponse1.Size = new System.Drawing.Size(339, 20);
+            this.TB_Reponse1.TabIndex = 8;
             // 
-            // textBox2
+            // TB_Reponse3
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(339, 20);
-            this.textBox2.TabIndex = 5;
+            this.TB_Reponse3.Location = new System.Drawing.Point(82, 96);
+            this.TB_Reponse3.Name = "TB_Reponse3";
+            this.TB_Reponse3.Size = new System.Drawing.Size(339, 20);
+            this.TB_Reponse3.TabIndex = 5;
             // 
-            // textBox4
+            // TB_Reponse2
             // 
-            this.textBox4.Location = new System.Drawing.Point(82, 70);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(339, 20);
-            this.textBox4.TabIndex = 7;
+            this.TB_Reponse2.Location = new System.Drawing.Point(82, 70);
+            this.TB_Reponse2.Name = "TB_Reponse2";
+            this.TB_Reponse2.Size = new System.Drawing.Size(339, 20);
+            this.TB_Reponse2.TabIndex = 7;
             // 
-            // textBox3
+            // TB_Reponse4
             // 
-            this.textBox3.Location = new System.Drawing.Point(82, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(339, 20);
-            this.textBox3.TabIndex = 6;
+            this.TB_Reponse4.Location = new System.Drawing.Point(82, 122);
+            this.TB_Reponse4.Name = "TB_Reponse4";
+            this.TB_Reponse4.Size = new System.Drawing.Size(339, 20);
+            this.TB_Reponse4.TabIndex = 6;
             // 
             // label2
             // 
@@ -212,12 +214,12 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Question :";
             // 
-            // textBox1
+            // TB_Question
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 20);
-            this.textBox1.TabIndex = 13;
+            this.TB_Question.Location = new System.Drawing.Point(84, 70);
+            this.TB_Question.Name = "TB_Question";
+            this.TB_Question.Size = new System.Drawing.Size(339, 20);
+            this.TB_Question.TabIndex = 13;
             // 
             // label1
             // 
@@ -234,11 +236,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 370);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BTN_Annuler);
+            this.Controls.Add(this.BTN_AjouterQuestion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TB_Question);
             this.Controls.Add(this.label1);
             this.Name = "AjouterQuestion";
             this.Text = "AjouterQuestion";
@@ -251,24 +253,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTN_Annuler;
+        private System.Windows.Forms.Button BTN_AjouterQuestion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Button BTN_InfoRB;
+        private System.Windows.Forms.RadioButton RB_Reponse2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton RB_Reponse3;
+        private System.Windows.Forms.RadioButton RB_Reponse4;
+        private System.Windows.Forms.RadioButton RB_Reponse1;
+        private System.Windows.Forms.TextBox TB_Reponse1;
+        private System.Windows.Forms.TextBox TB_Reponse3;
+        private System.Windows.Forms.TextBox TB_Reponse2;
+        private System.Windows.Forms.TextBox TB_Reponse4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TB_Question;
         private System.Windows.Forms.Label label1;
     }
 }
