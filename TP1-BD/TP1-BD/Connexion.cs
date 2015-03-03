@@ -73,7 +73,10 @@ namespace TP1_BD
             {
                 MessageBox.Show("Le nom d'utilisateur n'existe pas");
             }
-            Alias = TB_Alias.Text;
+            else
+            {
+                Alias = TB_Alias.Text;
+            }
         }
         
         /// <summary>

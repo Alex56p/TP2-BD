@@ -39,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.TB_Prenom = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TN_Alias = new System.Windows.Forms.TextBox();
+            this.TB_Alias = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -53,6 +53,7 @@
             this.groupBox2.Controls.Add(this.BTN_CommencerPartie);
             this.groupBox2.Controls.Add(this.BTN_Quitter);
             this.groupBox2.Controls.Add(this.BTN_AjouterQuestion);
+            this.groupBox2.Font = new System.Drawing.Font("Bauhaus 93", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(14, 92);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -123,7 +124,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TB_Prenom);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.TN_Alias);
+            this.groupBox1.Controls.Add(this.TB_Alias);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Bauhaus 93", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(302, 92);
@@ -175,15 +176,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Prénom :";
             // 
-            // TN_Alias
+            // TB_Alias
             // 
-            this.TN_Alias.Location = new System.Drawing.Point(13, 52);
-            this.TN_Alias.Margin = new System.Windows.Forms.Padding(4);
-            this.TN_Alias.Name = "TN_Alias";
-            this.TN_Alias.ReadOnly = true;
-            this.TN_Alias.Size = new System.Drawing.Size(181, 29);
-            this.TN_Alias.TabIndex = 1;
-            this.TN_Alias.Text = "Admin";
+            this.TB_Alias.Location = new System.Drawing.Point(13, 52);
+            this.TB_Alias.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_Alias.Name = "TB_Alias";
+            this.TB_Alias.ReadOnly = true;
+            this.TB_Alias.Size = new System.Drawing.Size(181, 29);
+            this.TB_Alias.TabIndex = 1;
+            this.TB_Alias.Text = "Admin";
             // 
             // label2
             // 
@@ -237,7 +238,7 @@
       private System.Windows.Forms.Label label4;
       private System.Windows.Forms.TextBox TB_Prenom;
       private System.Windows.Forms.Label label3;
-      private System.Windows.Forms.TextBox TN_Alias;
+      private System.Windows.Forms.TextBox TB_Alias;
       private System.Windows.Forms.Label label2;
       private System.Windows.Forms.Label label1;
 
