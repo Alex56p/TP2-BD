@@ -12,10 +12,7 @@ DROP TABLE MATCH;
 DROP TABLE JOUEURS;
 DROP TABLE CATEGORIES;
 
-DROP SEQUENCE SEQ_Sport;
-DROP SEQUENCE SEQ_JeuVideo;
-DROP SEQUENCE SEQ_Sciences;
-DROP SEQUENCE SEQ_Divertissement;
+DROP SEQUENCE SEQ_Question;
 DROP SEQUENCE SEQ_REPONSE;
 DROP SEQUENCE SEQ_Match;
 
@@ -48,7 +45,7 @@ ALTER TABLE MATCH ADD CONSTRAINT MATCH_PK PRIMARY KEY ( NumMatch ) ;
 CREATE TABLE QUESTIONS
   (
     NumQuestion    NUMBER NOT NULL ,
-    EnonceQuestion VARCHAR2(30) ,
+    EnonceQuestion VARCHAR2(150) ,
     Flag           CHAR (1) ,
     CodeCategorie  CHAR (2) NOT NULL
   ) ;
@@ -57,7 +54,7 @@ ALTER TABLE QUESTIONS ADD CONSTRAINT QUESTIONS_PK PRIMARY KEY ( NumQuestion ) ;
 CREATE TABLE REPONSES
   (
     NumReponse  NUMBER NOT NULL ,
-    Description VARCHAR2(30) ,
+    Description VARCHAR2(50) ,
     EstBonne    CHAR (1) ,
     NumQuestion NUMBER NOT NULL
   ) ;
@@ -92,21 +89,10 @@ ALTER TABLE SCORES ADD CONSTRAINT SCORES_MATCH_FK FOREIGN KEY ( NumMatch ) REFER
 
 ---------------------------------------------------------------------------------------------------------------
 
-CREATE SEQUENCE SEQ_Sport
-Increment by 1
+CREATE SEQUENCE SEQ_Question
+increment by 1
 Start with 1;
 
-CREATE SEQUENCE SEQ_Sciences
-Increment by 1
-Start with 1;
-
-CREATE SEQUENCE SEQ_Divertissement
-Increment by 1
-Start with 1;
-
-CREATE SEQUENCE SEQ_JeuVideo
-Increment by 1
-Start with 1;
 
 CREATE SEQUENCE SEQ_Reponse
 Increment by 1
