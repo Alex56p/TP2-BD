@@ -13,17 +13,16 @@ namespace TP1_BD
 {
    public partial class MenuPrincipal : Form
    {
-       // Connexion à la base de données
-      public static OracleConnection oraconn = new OracleConnection();
+
 
       public MenuPrincipal()
       {
           Connexion conn = new Connexion();
           conn.ShowDialog();
-          if(conn.DialogResult == System.Windows.Forms.DialogResult.OK)
+          InitializeComponent();
+          if(conn.DialogResult != System.Windows.Forms.DialogResult.OK)
           {
-              InitializeComponent();
-              oraconn = conn.oraconn;
+              this.Close();
           }
 
 

@@ -48,6 +48,7 @@
             this.BTN_Ok.TabIndex = 21;
             this.BTN_Ok.Text = "Ok";
             this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // TB_Prenom
             // 
@@ -55,6 +56,7 @@
             this.TB_Prenom.Name = "TB_Prenom";
             this.TB_Prenom.Size = new System.Drawing.Size(100, 20);
             this.TB_Prenom.TabIndex = 20;
+            this.TB_Prenom.TextChanged += new System.EventHandler(this.TB_Prenom_TextChanged);
             // 
             // TB_Nom
             // 
@@ -62,6 +64,7 @@
             this.TB_Nom.Name = "TB_Nom";
             this.TB_Nom.Size = new System.Drawing.Size(100, 20);
             this.TB_Nom.TabIndex = 19;
+            this.TB_Nom.TextChanged += new System.EventHandler(this.TB_Nom_TextChanged);
             // 
             // TB_Alias
             // 
@@ -69,6 +72,7 @@
             this.TB_Alias.Name = "TB_Alias";
             this.TB_Alias.Size = new System.Drawing.Size(100, 20);
             this.TB_Alias.TabIndex = 18;
+            this.TB_Alias.TextChanged += new System.EventHandler(this.TB_Alias_TextChanged);
             // 
             // label4
             // 

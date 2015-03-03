@@ -13,7 +13,9 @@ namespace TP1_BD
 {
     public partial class Connexion : Form
     {
-        public OracleConnection oraconn = new OracleConnection();
+        // Connexion à la base de données
+        public static OracleConnection oraconn = new OracleConnection();
+
         public String Alias;
 
         public Connexion()
