@@ -17,6 +17,7 @@ DROP SEQUENCE SEQ_JeuVideo;
 DROP SEQUENCE SEQ_Sciences;
 DROP SEQUENCE SEQ_Divertissement;
 DROP SEQUENCE SEQ_REPONSE;
+DROP SEQUENCE SEQ_Match;
 
 CREATE TABLE CATEGORIES
   (
@@ -37,10 +38,10 @@ ALTER TABLE JOUEURS ADD CONSTRAINT JOUEURS_PK PRIMARY KEY ( UserName ) ;
 CREATE TABLE MATCH
   (
     NumMatch NUMBER NOT NULL ,
-    Joueur1  VARCHAR2(30) NOT NULL ,
-    Joueur2  VARCHAR2(30) NOT NULL ,
-    Joueur3  VARCHAR2(30) NOT NULL ,
-    Joueur4  VARCHAR2(30) NOT NULL
+    Joueur1  VARCHAR2(30) ,
+    Joueur2  VARCHAR2(30) ,
+    Joueur3  VARCHAR2(30) ,
+    Joueur4  VARCHAR2(30) 
   ) ;
 ALTER TABLE MATCH ADD CONSTRAINT MATCH_PK PRIMARY KEY ( NumMatch ) ;
 
@@ -108,5 +109,9 @@ Increment by 1
 Start with 1;
 
 CREATE SEQUENCE SEQ_Reponse
+Increment by 1
+start with 1;
+
+CREATE SEQUENCE SEQ_Match
 Increment by 1
 start with 1;
