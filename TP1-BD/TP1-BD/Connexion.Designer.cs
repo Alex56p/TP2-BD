@@ -47,13 +47,13 @@
             // 
             // BTN_Connexion
             // 
-            this.BTN_Connexion.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BTN_Connexion.Location = new System.Drawing.Point(235, 102);
             this.BTN_Connexion.Name = "BTN_Connexion";
             this.BTN_Connexion.Size = new System.Drawing.Size(75, 23);
             this.BTN_Connexion.TabIndex = 15;
             this.BTN_Connexion.Text = "Connexion";
             this.BTN_Connexion.UseVisualStyleBackColor = true;
+            this.BTN_Connexion.Click += new System.EventHandler(this.BTN_Connexion_Click);
             // 
             // TB_Alias
             // 
@@ -61,6 +61,7 @@
             this.TB_Alias.Name = "TB_Alias";
             this.TB_Alias.Size = new System.Drawing.Size(150, 20);
             this.TB_Alias.TabIndex = 14;
+            this.TB_Alias.TextChanged += new System.EventHandler(this.TB_Alias_TextChanged);
             // 
             // label5
             // 
