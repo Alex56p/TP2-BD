@@ -59,6 +59,7 @@ namespace TP1_BD
         {
             Inscription inscription = new Inscription();
             inscription.ShowDialog();
+            CheckButton();
         }
 
         /// <summary>

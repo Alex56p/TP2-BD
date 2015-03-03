@@ -57,10 +57,12 @@
             // 
             // TB_Alias
             // 
-            this.TB_Alias.Location = new System.Drawing.Point(161, 57);
+            this.TB_Alias.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Bold);
+            this.TB_Alias.Location = new System.Drawing.Point(160, 56);
             this.TB_Alias.Name = "TB_Alias";
-            this.TB_Alias.Size = new System.Drawing.Size(150, 20);
+            this.TB_Alias.Size = new System.Drawing.Size(150, 26);
             this.TB_Alias.TabIndex = 14;
+            this.TB_Alias.Text = "Alex56p";
             this.TB_Alias.TextChanged += new System.EventHandler(this.TB_Alias_TextChanged);
             // 
             // label5
