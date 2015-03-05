@@ -14,16 +14,16 @@ namespace TP1_BD
     {
         public Jeu()
         {
-            Joueurs joueurs = new Joueurs();
-            joueurs.ShowDialog();
-            if(joueurs.DialogResult == System.Windows.Forms.DialogResult.OK)
-            {
-                InitializeComponent();
-            }
-            else
-            {
-                this.Close();
-            }
+            //Joueurs joueurs = new Joueurs();
+            //joueurs.ShowDialog();
+            //if(joueurs.DialogResult == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    InitializeComponent();
+            //}
+            //else
+            //{
+            //    this.Close();
+            //}
 
         }
 
