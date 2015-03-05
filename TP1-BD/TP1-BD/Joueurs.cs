@@ -21,9 +21,11 @@ namespace TP1_BD
             conn = oraconn;
             InitializeComponent();
             CheckComboBox();
+            CheckButton();
             AfficherJoueurs();
         }
 
+   
         private void BTN_CreerJoueur_Click(object sender, EventArgs e)
         {
             Inscription inscription = new Inscription();
@@ -114,18 +116,26 @@ namespace TP1_BD
             {
                 CB_Joueur4.Enabled = true;
             }
-
-            
         }
+        private void CheckButton()
+        {
+            if (CB_Joueur2.SelectedItem == null)
+                BTN_CommencerPartie.Enabled = false;
+            else
+                BTN_CommencerPartie.Enabled = true;
+        }
+
 
         private void CB_Joueur2_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckComboBox();
+            CheckButton();
         }
 
         private void CB_Joueur3_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckComboBox();
+            CheckButton();
         }
     }
 }

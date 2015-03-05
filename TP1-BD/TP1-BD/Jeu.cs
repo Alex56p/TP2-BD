@@ -70,7 +70,7 @@ namespace TP1_BD
         private void BTN_Tourner_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            int cat = random.Next(1, 5);
+            int cat = random.Next(1, 6);
             if (cat == 1)
             {
                 PN_Categorie.BackColor = Color.Green;
@@ -101,9 +101,15 @@ namespace TP1_BD
                 }
             }
             
-            RepondreQuestion rep = new RepondreQuestion(cat);
-            rep.ShowDialog();
-
+            /////////// À MODIFIER /////////// TEMPORAIRE PCQ IL MANQUE LES QUESTIONS DE SCIENCES ////////
+            RepondreQuestion rep;
+            if(cat != 1)
+            {
+                rep = new RepondreQuestion(cat);
+            
+                rep.ShowDialog();
+            }
+                 
         }
     }
 }

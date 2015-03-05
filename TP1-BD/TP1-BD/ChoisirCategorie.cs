@@ -51,6 +51,12 @@ namespace TP1_BD
             Categorie = 4;
         }
 
+        private void BTN_OK_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
      
 
     }

@@ -95,6 +95,7 @@
             // 
             // CB_Joueur2
             // 
+            this.CB_Joueur2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Joueur2.FormattingEnabled = true;
             this.CB_Joueur2.Location = new System.Drawing.Point(115, 47);
             this.CB_Joueur2.Name = "CB_Joueur2";
@@ -104,6 +105,7 @@
             // 
             // CB_Joueur4
             // 
+            this.CB_Joueur4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Joueur4.FormattingEnabled = true;
             this.CB_Joueur4.Location = new System.Drawing.Point(115, 101);
             this.CB_Joueur4.Name = "CB_Joueur4";
@@ -112,6 +114,7 @@
             // 
             // CB_Joueur3
             // 
+            this.CB_Joueur3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Joueur3.FormattingEnabled = true;
             this.CB_Joueur3.Location = new System.Drawing.Point(115, 74);
             this.CB_Joueur3.Name = "CB_Joueur3";

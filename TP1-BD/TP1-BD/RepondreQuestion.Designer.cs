@@ -78,6 +78,7 @@
             this.TB_Reponse1.TabIndex = 1;
             this.TB_Reponse1.Text = "P.K. Subban";
             this.TB_Reponse1.UseVisualStyleBackColor = true;
+            this.TB_Reponse1.Click += new System.EventHandler(this.TB_Reponse1_Click);
             // 
             // TB_Reponse2
             // 
