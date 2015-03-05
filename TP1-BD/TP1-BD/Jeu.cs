@@ -72,21 +72,36 @@ namespace TP1_BD
             Random random = new Random();
             int cat = random.Next(1, 5);
             if (cat == 1)
-                PN_Categorie.BackColor = Color.FromArgb(0, 192, 0);
+            {
+                PN_Categorie.BackColor = Color.Green;
+                MessageBox.Show("Sciences");
+            }
             else if (cat == 2)
-                PN_Categorie.BackColor = Color.FromArgb(255, 128, 0);
+            {
+                PN_Categorie.BackColor = Color.Orange;
+                MessageBox.Show("Sport");
+            }
             else if (cat == 3)
-                PN_Categorie.BackColor = Color.FromArgb(255, 128, 0);
-            else if (cat == 4)
+            {
                 PN_Categorie.BackColor = Color.Blue;
+                MessageBox.Show("Jeu Vidéo");
+            }
+            else if (cat == 4)
+            {
+                PN_Categorie.BackColor = Color.Fuchsia;
+                MessageBox.Show("Divertissement");
+            }
             else if (cat == 5)
             {
                 PN_Categorie.BackColor = Color.White;
-
+                ChoisirCategorie choix = new ChoisirCategorie();
+                if (choix.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    cat = choix.Categorie;
+                }
             }
-
+            
             RepondreQuestion rep = new RepondreQuestion(cat);
-            Thread.Sleep(2000);
             rep.ShowDialog();
 
         }

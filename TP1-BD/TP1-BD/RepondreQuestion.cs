@@ -12,9 +12,32 @@ namespace TP1_BD
 {
     public partial class RepondreQuestion : Form
     {
-        public RepondreQuestion()
+        public RepondreQuestion(int cat)
         {
             InitializeComponent();
+
+            if(cat == 1)
+            {
+                this.BackColor = Color.YellowGreen;
+            } 
+            else if (cat == 2)
+            {
+                this.BackColor = Color.DarkOrange;
+            }
+            else if (cat == 3)
+            {
+                this.BackColor = Color.DodgerBlue;
+            }
+            else if (cat == 4)
+            {
+                this.BackColor = Color.Orchid;
+            }
+            
+        }
+
+        private void AfficherQuestion()
+        {
+
         }
     }
 }

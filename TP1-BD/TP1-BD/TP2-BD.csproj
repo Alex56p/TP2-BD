@@ -54,6 +54,12 @@
     <Compile Include="AjouterQuestion.Designer.cs">
       <DependentUpon>AjouterQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChoisirCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoisirCategorie.Designer.cs">
+      <DependentUpon>ChoisirCategorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="AjouterQuestion.resx">
       <DependentUpon>AjouterQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoisirCategorie.resx">
+      <DependentUpon>ChoisirCategorie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Classement.resx">
       <DependentUpon>Classement.cs</DependentUpon>
