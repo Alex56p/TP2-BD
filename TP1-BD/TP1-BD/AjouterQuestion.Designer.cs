@@ -31,11 +31,12 @@
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.BTN_AjouterQuestion = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TB_BonneReponse = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TB_BonneReponse = new System.Windows.Forms.TextBox();
             this.TB_Reponse3 = new System.Windows.Forms.TextBox();
             this.TB_Reponse2 = new System.Windows.Forms.TextBox();
             this.TB_Reponse4 = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CB_Categories = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,7 @@
             this.BTN_AjouterQuestion.TabIndex = 16;
             this.BTN_AjouterQuestion.Text = "Ajouter la Question";
             this.BTN_AjouterQuestion.UseVisualStyleBackColor = true;
+            this.BTN_AjouterQuestion.Click += new System.EventHandler(this.BTN_AjouterQuestion_Click);
             // 
             // groupBox1
             // 
@@ -84,6 +85,34 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Réponses";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.TB_BonneReponse);
+            this.groupBox2.Location = new System.Drawing.Point(6, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(437, 45);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Bonne Réponse";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Réponse :";
+            // 
+            // TB_BonneReponse
+            // 
+            this.TB_BonneReponse.Location = new System.Drawing.Point(89, 18);
+            this.TB_BonneReponse.Name = "TB_BonneReponse";
+            this.TB_BonneReponse.Size = new System.Drawing.Size(339, 20);
+            this.TB_BonneReponse.TabIndex = 8;
+            this.TB_BonneReponse.TextChanged += new System.EventHandler(this.TB_BonneReponse_TextChanged);
             // 
             // label3
             // 
@@ -103,15 +132,6 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Réponse :";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Réponse :";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -120,14 +140,6 @@
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Réponse :";
-            // 
-            // TB_BonneReponse
-            // 
-            this.TB_BonneReponse.Location = new System.Drawing.Point(89, 18);
-            this.TB_BonneReponse.Name = "TB_BonneReponse";
-            this.TB_BonneReponse.Size = new System.Drawing.Size(339, 20);
-            this.TB_BonneReponse.TabIndex = 8;
-            this.TB_BonneReponse.TextChanged += new System.EventHandler(this.TB_BonneReponse_TextChanged);
             // 
             // TB_Reponse3
             // 
@@ -198,17 +210,6 @@
             this.CB_Categories.Size = new System.Drawing.Size(151, 21);
             this.CB_Categories.TabIndex = 1;
             this.CB_Categories.SelectedIndexChanged += new System.EventHandler(this.CB_Categories_SelectedIndexChanged);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.TB_BonneReponse);
-            this.groupBox2.Location = new System.Drawing.Point(6, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 45);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bonne Réponse";
             // 
             // AjouterQuestion
             // 
