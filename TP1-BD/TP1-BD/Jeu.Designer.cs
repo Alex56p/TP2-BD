@@ -31,8 +31,7 @@
             this.BTN_Quitter = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BTN_Tourner = new System.Windows.Forms.Button();
-            this.LB_NomCategorieTournee = new System.Windows.Forms.Label();
-            this.PB_CouleurTournee = new System.Windows.Forms.PictureBox();
+            this.PN_Categorie = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BTN_DetailsClassement = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,29 +46,29 @@
             this.TB_Classement3 = new System.Windows.Forms.TextBox();
             this.TB_Classement2 = new System.Windows.Forms.TextBox();
             this.TB_Classement1 = new System.Windows.Forms.TextBox();
-            this.TB_Tour = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.LB_Turn = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_CouleurTournee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PN_Categorie)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // BTN_Quitter
@@ -85,8 +84,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.BTN_Tourner);
-            this.groupBox2.Controls.Add(this.LB_NomCategorieTournee);
-            this.groupBox2.Controls.Add(this.PB_CouleurTournee);
+            this.groupBox2.Controls.Add(this.PN_Categorie);
             this.groupBox2.Location = new System.Drawing.Point(193, 256);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(316, 272);
@@ -102,25 +100,16 @@
             this.BTN_Tourner.TabIndex = 5;
             this.BTN_Tourner.Text = "Tourner la roulette";
             this.BTN_Tourner.UseVisualStyleBackColor = true;
+            this.BTN_Tourner.Click += new System.EventHandler(this.BTN_Tourner_Click);
             // 
-            // LB_NomCategorieTournee
+            // PN_Categorie
             // 
-            this.LB_NomCategorieTournee.AutoSize = true;
-            this.LB_NomCategorieTournee.BackColor = System.Drawing.Color.Transparent;
-            this.LB_NomCategorieTournee.Location = new System.Drawing.Point(134, 134);
-            this.LB_NomCategorieTournee.Name = "LB_NomCategorieTournee";
-            this.LB_NomCategorieTournee.Size = new System.Drawing.Size(37, 13);
-            this.LB_NomCategorieTournee.TabIndex = 7;
-            this.LB_NomCategorieTournee.Text = "Sports";
-            // 
-            // PB_CouleurTournee
-            // 
-            this.PB_CouleurTournee.BackColor = System.Drawing.Color.Red;
-            this.PB_CouleurTournee.Location = new System.Drawing.Point(38, 48);
-            this.PB_CouleurTournee.Name = "PB_CouleurTournee";
-            this.PB_CouleurTournee.Size = new System.Drawing.Size(237, 202);
-            this.PB_CouleurTournee.TabIndex = 6;
-            this.PB_CouleurTournee.TabStop = false;
+            this.PN_Categorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.PN_Categorie.Location = new System.Drawing.Point(38, 48);
+            this.PN_Categorie.Name = "PN_Categorie";
+            this.PN_Categorie.Size = new System.Drawing.Size(237, 202);
+            this.PN_Categorie.TabIndex = 6;
+            this.PN_Categorie.TabStop = false;
             // 
             // groupBox1
             // 
@@ -206,7 +195,7 @@
             this.LB_Points3.Name = "LB_Points3";
             this.LB_Points3.Size = new System.Drawing.Size(13, 13);
             this.LB_Points3.TabIndex = 15;
-            this.LB_Points3.Text = "2";
+            this.LB_Points3.Text = "0";
             // 
             // LB_Points4
             // 
@@ -262,21 +251,13 @@
             this.TB_Classement1.TabIndex = 12;
             this.TB_Classement1.Text = "Joueur1";
             // 
-            // TB_Tour
-            // 
-            this.TB_Tour.Location = new System.Drawing.Point(80, 77);
-            this.TB_Tour.Name = "TB_Tour";
-            this.TB_Tour.ReadOnly = true;
-            this.TB_Tour.Size = new System.Drawing.Size(100, 20);
-            this.TB_Tour.TabIndex = 13;
-            this.TB_Tour.Text = "Joueur1";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(39, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(80, 27);
             this.label2.TabIndex = 12;
             this.label2.Text = "Tour :";
             // 
@@ -309,45 +290,50 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Légende";
             // 
-            // pictureBox4
+            // label7
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 23);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Sport";
             // 
-            // pictureBox1
+            // label6
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Fuchsia;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 136);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Jeux Vidéo";
             // 
-            // pictureBox2
+            // label5
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 99);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 139);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Divertissement";
             // 
-            // pictureBox3
+            // label4
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(33, 176);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Votre choix";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Science";
             // 
             // pictureBox5
             // 
@@ -359,77 +345,81 @@
             this.pictureBox5.TabIndex = 25;
             this.pictureBox5.TabStop = false;
             // 
-            // label3
+            // pictureBox3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Science";
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 60);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
             // 
-            // label4
+            // pictureBox2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Votre choix";
+            this.pictureBox2.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 99);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // pictureBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 139);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Divertissement";
+            this.pictureBox1.BackColor = System.Drawing.Color.Fuchsia;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 136);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
-            // label6
+            // pictureBox4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 102);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Jeux Vidéo";
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
             // 
-            // label7
+            // LB_Turn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Sport";
+            this.LB_Turn.AutoSize = true;
+            this.LB_Turn.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Turn.Location = new System.Drawing.Point(125, 81);
+            this.LB_Turn.Name = "LB_Turn";
+            this.LB_Turn.Size = new System.Drawing.Size(26, 33);
+            this.LB_Turn.TabIndex = 18;
+            this.LB_Turn.Text = "1";
             // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 565);
+            this.Controls.Add(this.LB_Turn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BTN_Quitter);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.TB_Tour);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Jeu";
             this.Text = "Jeu";
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_CouleurTournee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PN_Categorie)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,8 +430,7 @@
         private System.Windows.Forms.Button BTN_Quitter;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BTN_Tourner;
-        private System.Windows.Forms.Label LB_NomCategorieTournee;
-        private System.Windows.Forms.PictureBox PB_CouleurTournee;
+        private System.Windows.Forms.PictureBox PN_Categorie;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BTN_DetailsClassement;
         private System.Windows.Forms.Label label11;
@@ -456,7 +445,6 @@
         private System.Windows.Forms.TextBox TB_Classement3;
         private System.Windows.Forms.TextBox TB_Classement2;
         private System.Windows.Forms.TextBox TB_Classement1;
-        private System.Windows.Forms.TextBox TB_Tour;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -470,5 +458,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LB_Turn;
     }
 }

@@ -35,7 +35,14 @@ namespace TP1_BD
         {
             if(CanStart())
             {
-                MessageBox.Show("youpi ca marche!");
+                Jeu jeu;
+                if(CB_Joueur4.SelectedItem != null)
+                    jeu = new Jeu(Alias,CB_Joueur2.SelectedItem.ToString(), CB_Joueur3.SelectedItem.ToString(), CB_Joueur4.SelectedItem.ToString());
+                else if(CB_Joueur3.SelectedItem != null)
+                    jeu = new Jeu(Alias, CB_Joueur2.SelectedItem.ToString(), CB_Joueur3.SelectedItem.ToString());
+                else 
+                    jeu = new Jeu(Alias, CB_Joueur2.SelectedItem.ToString());
+                jeu.ShowDialog();
             }
             else
             {
