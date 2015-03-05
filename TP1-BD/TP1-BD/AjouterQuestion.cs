@@ -101,38 +101,97 @@ namespace TP1_BD
         /// </summary>
         private void AjouterUneQuestion()
         {
-            //OracleCommand oraAjout = new OracleCommand("GESTIONEMPLOYES", Connexion.oraconn);
+            OracleCommand oraAjout = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
 
-            //oraAjout.CommandText = "GESTIONEMPLOYES.INSERTION";
-            //oraAjout.CommandType = CommandType.StoredProcedure;
+            oraAjout.CommandText = "GESTIONINTELLICRACK.Ajouter_Question";
+            oraAjout.CommandType = CommandType.StoredProcedure;
 
-            //OracleParameter oraPNUMEMP = new OracleParameter("PNUMEMP", OracleDbType.Int32);
-            //oraPNUMEMP.Direction = ParameterDirection.Input;
-            //oraPNUMEMP.Value = TB_Add_NumEmp.Text;
-            //oraAjout.Parameters.Add(oraPNUMEMP);
+            // Categorie
+            OracleParameter oraP_Categorie = new OracleParameter("P_CATEGORIE", OracleDbType.Char, 2);
+            oraP_Categorie.Direction = ParameterDirection.Input;
+            oraP_Categorie.Value = GetCodeCategorie(CB_Categories.SelectedItem.ToString());
+            oraAjout.Parameters.Add(oraP_Categorie);
 
-            //OracleParameter oraNOMEMP = new OracleParameter("PNOMEMP", OracleDbType.Varchar2, 50);
-            //oraNOMEMP.Direction = ParameterDirection.Input;
-            //oraNOMEMP.Value = TB_Add_NomEmp.Text;
-            //oraAjout.Parameters.Add(oraNOMEMP);
+            // Question
+            OracleParameter oraQUESTION = new OracleParameter("P_Q", OracleDbType.Varchar2, 150);
+            oraQUESTION.Direction = ParameterDirection.Input;
+            oraQUESTION.Value = TB_Question.Text;
+            oraAjout.Parameters.Add(oraQUESTION);
+
+            // Bonne Réponse
+            OracleParameter oraPR1 = new OracleParameter("P_R1", OracleDbType.Varchar2, 50);
+            oraPR1.Direction = ParameterDirection.Input;
+            oraPR1.Value = TB_BonneReponse.Text;
+            oraAjout.Parameters.Add(oraPR1);
+
+            // Réponse 2
+            OracleParameter oraPR2 = new OracleParameter("P_R2", OracleDbType.Varchar2, 50);
+            oraPR2.Direction = ParameterDirection.Input;
+            oraPR2.Value = TB_Reponse2.Text;
+            oraAjout.Parameters.Add(oraPR2);
+
+            // Réponse 3
+            OracleParameter oraPR3 = new OracleParameter("P_R3", OracleDbType.Varchar2, 50);
+            oraPR3.Direction = ParameterDirection.Input;
+            oraPR3.Value = TB_Reponse3.Text;
+            oraAjout.Parameters.Add(oraPR3);
+
+            // Réponse 4
+            OracleParameter oraPR4 = new OracleParameter("P_R4", OracleDbType.Char, 3);
+            oraPR4.Direction = ParameterDirection.Input;
+            oraPR4.Value = TB_Reponse4.Text;
+            oraAjout.Parameters.Add(oraPR4);
+
+            oraAjout.ExecuteNonQuery();
+
+            MessageBox.Show("La question à été ajoutée avec Succès!");
+        }
 
             //OracleParameter oraPPRENOMEMP = new OracleParameter("PPRENOMEMP", OracleDbType.Varchar2, 50);
             //oraPPRENOMEMP.Direction = ParameterDirection.Input;
             //oraPPRENOMEMP.Value = TB_Add_PrenomEmp.Text;
             //oraAjout.Parameters.Add(oraPPRENOMEMP);
+        /// <summary>
+        /// GetCodeCategorie
+        /// Permet de retourner le code de la catégorie avec le nom de celle-ci
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <returns></returns>
+        private string GetCodeCategorie(string nom)
+        {
+            string codeCategorie = "";
+            string SQLCode = "SELECT CODECATEGORIE FROM CATEGORIES WHERE NOMCATEGORIE = '" + nom + "'";
 
             //OracleParameter oraPSALAIREEMP = new OracleParameter("PSALAIREEMP", OracleDbType.Int32);
             //oraPSALAIREEMP.Direction = ParameterDirection.Input;
             //oraPSALAIREEMP.Value = TB_Add_SalaireEmp.Text;
             //oraAjout.Parameters.Add(oraPSALAIREEMP);
+            OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
+            orcmd.CommandType = CommandType.Text;
+            OracleDataReader orareader = orcmd.ExecuteReader();
 
             //OracleParameter oraPCODEDEPEMP = new OracleParameter("PCODEDEPEMP", OracleDbType.Char, 3);
             //oraPCODEDEPEMP.Direction = ParameterDirection.Input;
             //oraPCODEDEPEMP.Value = TB_Add_CodeDepEmp.Text;
             //oraAjout.Parameters.Add(oraPCODEDEPEMP);
+            if (orareader.Read())
+            {
+                codeCategorie = orareader.GetString(0);
+            }
 
             //oraAjout.ExecuteNonQuery();
+            return codeCategorie;
+        }
 
+        /// <summary>
+        /// BTN_AjouterQuestion_Click
+        /// Permet d'ajouter la question quand le bouton est sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BTN_AjouterQuestion_Click(object sender, EventArgs e)
+        {
+            AjouterUneQuestion();
         }
     }
 }
