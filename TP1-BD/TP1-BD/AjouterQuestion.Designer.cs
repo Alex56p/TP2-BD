@@ -68,6 +68,7 @@
             this.BTN_AjouterQuestion.TabIndex = 16;
             this.BTN_AjouterQuestion.Text = "Ajouter la Question";
             this.BTN_AjouterQuestion.UseVisualStyleBackColor = true;
+            this.BTN_AjouterQuestion.Click += new System.EventHandler(this.BTN_AjouterQuestion_Click);
             // 
             // groupBox1
             // 
