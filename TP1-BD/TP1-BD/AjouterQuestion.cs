@@ -99,39 +99,39 @@ namespace TP1_BD
         /// AjouterQuestion
         /// Permet d'ajouter une question à la BD
         /// </summary>
-        private void AjouterQuestion()
+        private void AjouterUneQuestion()
         {
-            OracleCommand oraAjout = new OracleCommand("GESTIONEMPLOYES", Connexion.oraconn);
+            //OracleCommand oraAjout = new OracleCommand("GESTIONEMPLOYES", Connexion.oraconn);
 
-            oraAjout.CommandText = "GESTIONEMPLOYES.INSERTION";
-            oraAjout.CommandType = CommandType.StoredProcedure;
+            //oraAjout.CommandText = "GESTIONEMPLOYES.INSERTION";
+            //oraAjout.CommandType = CommandType.StoredProcedure;
 
-            OracleParameter oraPNUMEMP = new OracleParameter("PNUMEMP", OracleDbType.Int32);
-            oraPNUMEMP.Direction = ParameterDirection.Input;
-            oraPNUMEMP.Value = TB_Add_NumEmp.Text;
-            oraAjout.Parameters.Add(oraPNUMEMP);
+            //OracleParameter oraPNUMEMP = new OracleParameter("PNUMEMP", OracleDbType.Int32);
+            //oraPNUMEMP.Direction = ParameterDirection.Input;
+            //oraPNUMEMP.Value = TB_Add_NumEmp.Text;
+            //oraAjout.Parameters.Add(oraPNUMEMP);
 
-            OracleParameter oraNOMEMP = new OracleParameter("PNOMEMP", OracleDbType.Varchar2, 50);
-            oraNOMEMP.Direction = ParameterDirection.Input;
-            oraNOMEMP.Value = TB_Add_NomEmp.Text;
-            oraAjout.Parameters.Add(oraNOMEMP);
+            //OracleParameter oraNOMEMP = new OracleParameter("PNOMEMP", OracleDbType.Varchar2, 50);
+            //oraNOMEMP.Direction = ParameterDirection.Input;
+            //oraNOMEMP.Value = TB_Add_NomEmp.Text;
+            //oraAjout.Parameters.Add(oraNOMEMP);
 
-            OracleParameter oraPPRENOMEMP = new OracleParameter("PPRENOMEMP", OracleDbType.Varchar2, 50);
-            oraPPRENOMEMP.Direction = ParameterDirection.Input;
-            oraPPRENOMEMP.Value = TB_Add_PrenomEmp.Text;
-            oraAjout.Parameters.Add(oraPPRENOMEMP);
+            //OracleParameter oraPPRENOMEMP = new OracleParameter("PPRENOMEMP", OracleDbType.Varchar2, 50);
+            //oraPPRENOMEMP.Direction = ParameterDirection.Input;
+            //oraPPRENOMEMP.Value = TB_Add_PrenomEmp.Text;
+            //oraAjout.Parameters.Add(oraPPRENOMEMP);
 
-            OracleParameter oraPSALAIREEMP = new OracleParameter("PSALAIREEMP", OracleDbType.Int32);
-            oraPSALAIREEMP.Direction = ParameterDirection.Input;
-            oraPSALAIREEMP.Value = TB_Add_SalaireEmp.Text;
-            oraAjout.Parameters.Add(oraPSALAIREEMP);
+            //OracleParameter oraPSALAIREEMP = new OracleParameter("PSALAIREEMP", OracleDbType.Int32);
+            //oraPSALAIREEMP.Direction = ParameterDirection.Input;
+            //oraPSALAIREEMP.Value = TB_Add_SalaireEmp.Text;
+            //oraAjout.Parameters.Add(oraPSALAIREEMP);
 
-            OracleParameter oraPCODEDEPEMP = new OracleParameter("PCODEDEPEMP", OracleDbType.Char, 3);
-            oraPCODEDEPEMP.Direction = ParameterDirection.Input;
-            oraPCODEDEPEMP.Value = TB_Add_CodeDepEmp.Text;
-            oraAjout.Parameters.Add(oraPCODEDEPEMP);
+            //OracleParameter oraPCODEDEPEMP = new OracleParameter("PCODEDEPEMP", OracleDbType.Char, 3);
+            //oraPCODEDEPEMP.Direction = ParameterDirection.Input;
+            //oraPCODEDEPEMP.Value = TB_Add_CodeDepEmp.Text;
+            //oraAjout.Parameters.Add(oraPCODEDEPEMP);
 
-            oraAjout.ExecuteNonQuery();
+            //oraAjout.ExecuteNonQuery();
 
         }
     }

@@ -66,8 +66,8 @@ namespace TP1_BD
         /// <param name="e"></param>
         private void BTN_CommencerPartie_Click(object sender, EventArgs e)
         {
-            Jeu jeu = new Jeu();
-            jeu.ShowDialog();
+            Joueurs joueurs = new Joueurs(Alias,Connexion.oraconn);
+            joueurs.ShowDialog();
         }
 
         /// <summary>

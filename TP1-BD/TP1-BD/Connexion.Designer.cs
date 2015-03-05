@@ -37,6 +37,7 @@
             // 
             // BTN_Inscription
             // 
+            this.BTN_Inscription.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTN_Inscription.Location = new System.Drawing.Point(154, 102);
             this.BTN_Inscription.Name = "BTN_Inscription";
             this.BTN_Inscription.Size = new System.Drawing.Size(75, 23);
@@ -47,6 +48,7 @@
             // 
             // BTN_Connexion
             // 
+            this.BTN_Connexion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BTN_Connexion.Location = new System.Drawing.Point(235, 102);
             this.BTN_Connexion.Name = "BTN_Connexion";
             this.BTN_Connexion.Size = new System.Drawing.Size(75, 23);
@@ -61,7 +63,7 @@
             this.TB_Alias.Location = new System.Drawing.Point(160, 56);
             this.TB_Alias.Name = "TB_Alias";
             this.TB_Alias.Size = new System.Drawing.Size(150, 26);
-            this.TB_Alias.TabIndex = 14;
+            this.TB_Alias.TabIndex = 1;
             this.TB_Alias.Text = "Alex56p";
             this.TB_Alias.TextChanged += new System.EventHandler(this.TB_Alias_TextChanged);
             // 
@@ -87,6 +89,7 @@
             // 
             // Connexion
             // 
+            this.AcceptButton = this.BTN_Connexion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 134);

@@ -45,7 +45,7 @@
             this.BTN_Ok.Location = new System.Drawing.Point(186, 143);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Ok.TabIndex = 21;
+            this.BTN_Ok.TabIndex = 4;
             this.BTN_Ok.Text = "Ok";
             this.BTN_Ok.UseVisualStyleBackColor = true;
             this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
@@ -55,7 +55,7 @@
             this.TB_Prenom.Location = new System.Drawing.Point(157, 76);
             this.TB_Prenom.Name = "TB_Prenom";
             this.TB_Prenom.Size = new System.Drawing.Size(100, 20);
-            this.TB_Prenom.TabIndex = 20;
+            this.TB_Prenom.TabIndex = 2;
             this.TB_Prenom.TextChanged += new System.EventHandler(this.TB_Prenom_TextChanged);
             // 
             // TB_Nom
@@ -63,7 +63,7 @@
             this.TB_Nom.Location = new System.Drawing.Point(157, 102);
             this.TB_Nom.Name = "TB_Nom";
             this.TB_Nom.Size = new System.Drawing.Size(100, 20);
-            this.TB_Nom.TabIndex = 19;
+            this.TB_Nom.TabIndex = 3;
             this.TB_Nom.TextChanged += new System.EventHandler(this.TB_Nom_TextChanged);
             // 
             // TB_Alias
@@ -71,7 +71,7 @@
             this.TB_Alias.Location = new System.Drawing.Point(157, 50);
             this.TB_Alias.Name = "TB_Alias";
             this.TB_Alias.Size = new System.Drawing.Size(100, 20);
-            this.TB_Alias.TabIndex = 18;
+            this.TB_Alias.TabIndex = 1;
             this.TB_Alias.TextChanged += new System.EventHandler(this.TB_Alias_TextChanged);
             // 
             // label4
@@ -120,12 +120,13 @@
             this.BTN_Annuler.Location = new System.Drawing.Point(105, 143);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Annuler.TabIndex = 22;
+            this.BTN_Annuler.TabIndex = 5;
             this.BTN_Annuler.Text = "Annuler";
             this.BTN_Annuler.UseVisualStyleBackColor = true;
             // 
             // Inscription
             // 
+            this.AcceptButton = this.BTN_Ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 176);
