@@ -144,13 +144,9 @@ namespace TP1_BD
 
             oraAjout.ExecuteNonQuery();
 
+            // Afficher un message disant que la question à été ajoutée
             MessageBox.Show("La question à été ajoutée avec Succès!");
         }
-
-            //OracleParameter oraPPRENOMEMP = new OracleParameter("PPRENOMEMP", OracleDbType.Varchar2, 50);
-            //oraPPRENOMEMP.Direction = ParameterDirection.Input;
-            //oraPPRENOMEMP.Value = TB_Add_PrenomEmp.Text;
-            //oraAjout.Parameters.Add(oraPPRENOMEMP);
         /// <summary>
         /// GetCodeCategorie
         /// Permet de retourner le code de la catégorie avec le nom de celle-ci
@@ -162,18 +158,10 @@ namespace TP1_BD
             string codeCategorie = "";
             string SQLCode = "SELECT CODECATEGORIE FROM CATEGORIES WHERE NOMCATEGORIE = '" + nom + "'";
 
-            //OracleParameter oraPSALAIREEMP = new OracleParameter("PSALAIREEMP", OracleDbType.Int32);
-            //oraPSALAIREEMP.Direction = ParameterDirection.Input;
-            //oraPSALAIREEMP.Value = TB_Add_SalaireEmp.Text;
-            //oraAjout.Parameters.Add(oraPSALAIREEMP);
             OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
             orcmd.CommandType = CommandType.Text;
             OracleDataReader orareader = orcmd.ExecuteReader();
 
-            //OracleParameter oraPCODEDEPEMP = new OracleParameter("PCODEDEPEMP", OracleDbType.Char, 3);
-            //oraPCODEDEPEMP.Direction = ParameterDirection.Input;
-            //oraPCODEDEPEMP.Value = TB_Add_CodeDepEmp.Text;
-            //oraAjout.Parameters.Add(oraPCODEDEPEMP);
             if (orareader.Read())
             {
                 codeCategorie = orareader.GetString(0);

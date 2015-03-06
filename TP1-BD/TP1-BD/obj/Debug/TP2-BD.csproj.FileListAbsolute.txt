@@ -37,3 +37,4 @@ C:\Users\Antho\Desktop\TP2-BD\TP1-BD\TP1-BD\bin\Debug\TP1-BD.exe
 C:\Users\Antho\Desktop\TP2-BD\TP1-BD\TP1-BD\bin\Debug\TP1-BD.pdb
 C:\Users\Antho\Desktop\TP2-BD\TP1-BD\TP1-BD\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Antho\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.ChoisirCategorie.resources
+C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.ChoisirCategorie.resources
