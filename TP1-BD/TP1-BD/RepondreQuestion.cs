@@ -104,12 +104,121 @@ namespace TP1_BD
                 }
             }
 
-            TB_Reponse1.Text = GetReponseText(Reponse1);
-            TB_Reponse2.Text = GetReponseText(Reponse2);
-            TB_Reponse3.Text = GetReponseText(Reponse3);
-            TB_Reponse4.Text = GetReponseText(Reponse4);
+            Random random = new Random();
+            int r = random.Next(0, 8);
+            if ( r == 0)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse1);
+               TB_Reponse2.Text = GetReponseText(Reponse2);
+               TB_Reponse3.Text = GetReponseText(Reponse3);
+               TB_Reponse4.Text = GetReponseText(Reponse4);
+            }
+            else if ( r == 1)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse2);
+               TB_Reponse2.Text = GetReponseText(Reponse1);
+               TB_Reponse3.Text = GetReponseText(Reponse3);
+               TB_Reponse4.Text = GetReponseText(Reponse4);
+            }
+            else if ( r == 2)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse1);
+               TB_Reponse2.Text = GetReponseText(Reponse2);
+               TB_Reponse3.Text = GetReponseText(Reponse4);
+               TB_Reponse4.Text = GetReponseText(Reponse3);
+            }
+            else if ( r == 3)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse2);
+               TB_Reponse2.Text = GetReponseText(Reponse3);
+               TB_Reponse3.Text = GetReponseText(Reponse1);
+               TB_Reponse4.Text = GetReponseText(Reponse4);
+            }
+            else if ( r == 4)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse4);
+               TB_Reponse2.Text = GetReponseText(Reponse3);
+               TB_Reponse3.Text = GetReponseText(Reponse2);
+               TB_Reponse4.Text = GetReponseText(Reponse1);
+            }
+            else if (r == 5)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse3);
+               TB_Reponse2.Text = GetReponseText(Reponse4);
+               TB_Reponse3.Text = GetReponseText(Reponse1);
+               TB_Reponse4.Text = GetReponseText(Reponse2);
+            }
+            else if (r == 6)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse1);
+               TB_Reponse2.Text = GetReponseText(Reponse4);
+               TB_Reponse3.Text = GetReponseText(Reponse3);
+               TB_Reponse4.Text = GetReponseText(Reponse2);
+            }
+            else if (r == 7)
+            {
+               TB_Reponse1.Text = GetReponseText(Reponse3);
+               TB_Reponse2.Text = GetReponseText(Reponse1);
+               TB_Reponse3.Text = GetReponseText(Reponse2);
+               TB_Reponse4.Text = GetReponseText(Reponse4);
+            }
         }
 
+       private void ValiderReponse(string Reponse)
+        {
+           OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+           oraliste.CommandText = "GESTIONINTELLICRACK.Valider_Reponse";
+           oraliste.CommandType = CommandType.StoredProcedure;
+
+           // Return Value
+           OracleParameter OrapameResultat = new OracleParameter("ENREMPLOYE", OracleDbType.Char,);
+           OrapameResultat.Direction = ParameterDirection.ReturnValue;
+           oraliste.Parameters.Add(OrapameResultat);
+
+           // déclaration du paramètre en IN
+           OracleParameter OrapamDesc = new OracleParameter("FREPONSE", OracleDbType.Int32);
+           OrapamDesc.Value = GetNumQuestion();
+           OrapamDesc.Direction = ParameterDirection.Input;
+           oraliste.Parameters.Add(OrapamDesc);
+
+           OracleDataReader Oraread = oraliste.ExecuteReader();
+
+          if(Oraread.Read())
+          {
+             if(Oraread.GetChar(0) == 'Y')
+             {
+                UpdateScore();
+             }
+          }
+        }
+
+       private void UpdateScore()
+       {
+          throw new NotImplementedException();
+       }
+       
+       private void TB_Reponse1_Click(object sender, EventArgs e)
+        {
+           ValiderReponse(TB_Reponse1.Text);
+        }
+
+        private void TB_Reponse2_Click(object sender, EventArgs e)
+        {
+           ValiderReponse(TB_Reponse2.Text);
+        }
+
+        private void TB_Reponse3_Click(object sender, EventArgs e)
+        {
+           ValiderReponse(TB_Reponse3.Text);
+        }
+
+        private void TB_Reponse4_Click(object sender, EventArgs e)
+        {
+           ValiderReponse(TB_Reponse4.Text);
+        }
+
+       //Région avec les fonctions pour get des valeurs en SQL
+        #region GetSQL
         private int GetNumQuestion()
         {
             int numQ = 0;
@@ -125,6 +234,24 @@ namespace TP1_BD
             }
 
             return numQ;
+        }
+       
+       private int GetNumReponse(string Reponse)
+        {
+           int  NumR = 0;
+
+           string SQLCode = "SELECT NumReponse FROM Reponses WHERE Description = '" + Reponse + "'";
+
+           OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
+           orcmd.CommandType = CommandType.Text;
+           OracleDataReader orareader = orcmd.ExecuteReader();
+
+           if (orareader.Read())
+           {
+              NumR = orareader.GetInt32(0);
+           }
+
+           return NumR;
         }
 
         private string GetReponseText(int NumRep)
@@ -166,9 +293,7 @@ namespace TP1_BD
                 return "Sc";
         }
 
-        private void TB_Reponse1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
+        
     }
 }
