@@ -213,7 +213,7 @@ namespace TP1_BD
 
             // Paramètre du numero du match
             OracleParameter OraNumMatch = new OracleParameter("F_NumMatch", OracleDbType.Int32);
-            //OraNumMatch.Value = GetNumMatch();
+            OraNumMatch.Value = Jeu.NumMatch;
             OraNumMatch.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OraNumMatch);
 

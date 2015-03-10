@@ -389,7 +389,7 @@
             // 
             this.LB_Turn.AutoSize = true;
             this.LB_Turn.Font = new System.Drawing.Font("Showcard Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Turn.Location = new System.Drawing.Point(125, 81);
+            this.LB_Turn.Location = new System.Drawing.Point(43, 116);
             this.LB_Turn.Name = "LB_Turn";
             this.LB_Turn.Size = new System.Drawing.Size(26, 33);
             this.LB_Turn.TabIndex = 18;
