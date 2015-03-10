@@ -206,19 +206,19 @@ namespace TP1_BD
             oraliste.CommandType = CommandType.StoredProcedure;
 
             // Paramètre de la catégorie
-            OracleParameter OrapameResultat = new OracleParameter("F_Categorie", OracleDbType.Char, 2);
+            OracleParameter OrapameResultat = new OracleParameter("FCATEGORIE", OracleDbType.Char, 2);
             OrapameResultat.Value = GetCodeCategorie(Category);
             OrapameResultat.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OrapameResultat);
 
             // Paramètre du numero du match
-            OracleParameter OraNumMatch = new OracleParameter("F_Categorie", OracleDbType.Char, 2);
-            OraNumMatch.Value = GetCodeCategorie(Category);
+            OracleParameter OraNumMatch = new OracleParameter("F_NumMatch", OracleDbType.Int32);
+            //OraNumMatch.Value = GetNumMatch();
             OraNumMatch.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OraNumMatch);
 
             // déclaration du paramètre en IN
-            OracleParameter OrapamDesc = new OracleParameter("F_Username", OracleDbType.Varchar2,30);
+            OracleParameter OrapamDesc = new OracleParameter("F_UserName", OracleDbType.Varchar2, 30);
             OrapamDesc.Value = Joueur;
             OrapamDesc.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OrapamDesc);

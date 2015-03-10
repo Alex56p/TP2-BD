@@ -18,6 +18,8 @@ namespace TP1_BD
         string J2;
         string J3;
         string J4;
+        string Tour;
+        int NumMatch; 
 
         string JoueurCourant;
         public Jeu(String j1, String j2)
@@ -85,7 +87,13 @@ namespace TP1_BD
                 }
             }
 
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("Num_Match", OracleDbType.Int32);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
+
             oraliste.ExecuteNonQuery();
+            NumMatch = int.Parse(oraliste.Parameters["Num_Match"].Value.ToString());
         }
 
         private void AfficherJoueurs()
