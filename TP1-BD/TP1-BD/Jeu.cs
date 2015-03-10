@@ -8,28 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Oracle.DataAccess.Client;
 
 namespace TP1_BD
 {
     public partial class Jeu : Form
     {
-        String J1;
-        String J2;
-        String J3;
-        String J4;
+        string J1;
+        string J2;
+        string J3;
+        string J4;
+
+        string JoueurCourant;
         public Jeu(String j1, String j2)
         {
             InitializeComponent();
             J1 = j1;
             J2 = j2;
+            CreerMatch(2);
             AfficherJoueurs();
         }
+
+        
         public Jeu(String j1, String j2, String j3)
         {
             InitializeComponent();
             J1 = j1;
             J2 = j2;
             J3 = j3;
+            CreerMatch(3);
             AfficherJoueurs();
         }
         public Jeu(String j1, String j2, String j3, String j4)
@@ -39,11 +46,52 @@ namespace TP1_BD
             J2 = j2;
             J3 = j3;
             J4 = j4;
+            CreerMatch(4);
             AfficherJoueurs();
+        }
+
+        private void CreerMatch(int NbJoueurs)
+        {
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.Ajouter_Match";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Paramètre Joueur1
+            OracleParameter OraJ1 = new OracleParameter("F_J1", OracleDbType.Varchar2, 30);
+            OraJ1.Value = J1;
+            OraJ1.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ1);
+
+            // Paramètre Joueur2
+            OracleParameter OraJ2 = new OracleParameter("F_Categorie", OracleDbType.Varchar2, 30);
+            OraJ2.Value = J2;
+            OraJ2.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ2);
+
+            if(NbJoueurs >= 3)
+            {
+                // déclaration du paramètre en IN
+                OracleParameter OraJ3 = new OracleParameter("F_Username", OracleDbType.Varchar2, 30);
+                OraJ3.Value = J3;
+                OraJ3.Direction = ParameterDirection.Input;
+                oraliste.Parameters.Add(OraJ3);
+
+                if(NbJoueurs == 4)
+                {
+                    OracleParameter OraJ4 = new OracleParameter("F_Username", OracleDbType.Varchar2, 30);
+                    OraJ4.Value = J4;
+                    OraJ4.Direction = ParameterDirection.Input;
+                    oraliste.Parameters.Add(OraJ4);
+                }
+            }
+
+            oraliste.ExecuteNonQuery();
         }
 
         private void AfficherJoueurs()
         {
+            JoueurCourant = J1;
+
             TB_Classement1.Text = J1;
             TB_Classement2.Text = J2;
             if (J3 != null)
@@ -105,7 +153,7 @@ namespace TP1_BD
             RepondreQuestion rep;
             if(cat != 1)
             {
-                rep = new RepondreQuestion(cat);
+                rep = new RepondreQuestion(cat,JoueurCourant);
             
                 rep.ShowDialog();
             }

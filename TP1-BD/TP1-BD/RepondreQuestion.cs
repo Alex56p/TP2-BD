@@ -13,16 +13,18 @@ namespace TP1_BD
 {
     public partial class RepondreQuestion : Form
     {
+        string Joueur;
         int Category;
         int Reponse1;
         int Reponse2;
         int Reponse3;
         int Reponse4;
-        object Q;
-        
-        public RepondreQuestion(int cat)
+        string Q;
+
+        public RepondreQuestion(int cat, string JoueurCourant)
         {
             InitializeComponent();
+            Joueur = JoueurCourant;
             Category = cat;
             if (Category == 1)
             {
@@ -43,7 +45,7 @@ namespace TP1_BD
 
             AfficherQuestion();
             AfficherReponses();
-            
+
         }
 
         private void AfficherQuestion()
@@ -52,12 +54,12 @@ namespace TP1_BD
 
             oracmd.CommandText = "GESTIONINTELLICRACK.Trouver_Question";
             oracmd.CommandType = CommandType.StoredProcedure;
-            
+
             //Return
-            OracleParameter oraReturn = new OracleParameter("retval", OracleDbType.Varchar2, 200);
+            OracleParameter oraReturn = new OracleParameter("retval", OracleDbType.Int32);
             oraReturn.Direction = ParameterDirection.ReturnValue;
             oracmd.Parameters.Add(oraReturn);
-            
+
             // Categorie
             OracleParameter oraP_Categorie = new OracleParameter("P_CATEGORIE", OracleDbType.Char, 2);
             oraP_Categorie.Direction = ParameterDirection.Input;
@@ -66,8 +68,9 @@ namespace TP1_BD
 
             oracmd.ExecuteNonQuery();
 
-            Q = oracmd.Parameters["retval"].Value;
-            LB_Question.Text = Q.ToString();
+            Q = oracmd.Parameters["retval"].Value.ToString();
+
+            LB_Question.Text = GetQuestion();
         }
 
         private void AfficherReponses()
@@ -77,27 +80,27 @@ namespace TP1_BD
             oraliste.CommandType = CommandType.StoredProcedure;
 
             // Return Value
-            OracleParameter OrapameResultat = new OracleParameter("ENREMPLOYE", OracleDbType.RefCursor);
+            OracleParameter OrapameResultat = new OracleParameter("Enr_Reponse", OracleDbType.RefCursor);
             OrapameResultat.Direction = ParameterDirection.ReturnValue;
             oraliste.Parameters.Add(OrapameResultat);
 
             // déclaration du paramètre en IN
             OracleParameter OrapamDesc = new OracleParameter("FNUMQ", OracleDbType.Char, 3);
-            OrapamDesc.Value = GetNumQuestion();
+            OrapamDesc.Value = Q;
             OrapamDesc.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OrapamDesc);
 
             OracleDataReader Oraread = oraliste.ExecuteReader();
 
-            for(int i = 0; i < 4; i++) 
+            for (int i = 0; i < 4; i++)
             {
-                if(Oraread.Read())
+                if (Oraread.Read())
                 {
-                    if(i == 0)
+                    if (i == 0)
                         Reponse1 = Oraread.GetInt32(0);
                     else if (i == 1)
                         Reponse2 = Oraread.GetInt32(0);
-                    else if( i == 2)
+                    else if (i == 2)
                         Reponse3 = Oraread.GetInt32(0);
                     else if (i == 3)
                         Reponse4 = Oraread.GetInt32(0);
@@ -106,123 +109,152 @@ namespace TP1_BD
 
             Random random = new Random();
             int r = random.Next(0, 8);
-            if ( r == 0)
+            if (r == 0)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse1);
-               TB_Reponse2.Text = GetReponseText(Reponse2);
-               TB_Reponse3.Text = GetReponseText(Reponse3);
-               TB_Reponse4.Text = GetReponseText(Reponse4);
+                TB_Reponse1.Text = GetReponseText(Reponse1);
+                TB_Reponse2.Text = GetReponseText(Reponse2);
+                TB_Reponse3.Text = GetReponseText(Reponse3);
+                TB_Reponse4.Text = GetReponseText(Reponse4);
             }
-            else if ( r == 1)
+            else if (r == 1)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse2);
-               TB_Reponse2.Text = GetReponseText(Reponse1);
-               TB_Reponse3.Text = GetReponseText(Reponse3);
-               TB_Reponse4.Text = GetReponseText(Reponse4);
+                TB_Reponse1.Text = GetReponseText(Reponse2);
+                TB_Reponse2.Text = GetReponseText(Reponse1);
+                TB_Reponse3.Text = GetReponseText(Reponse3);
+                TB_Reponse4.Text = GetReponseText(Reponse4);
             }
-            else if ( r == 2)
+            else if (r == 2)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse1);
-               TB_Reponse2.Text = GetReponseText(Reponse2);
-               TB_Reponse3.Text = GetReponseText(Reponse4);
-               TB_Reponse4.Text = GetReponseText(Reponse3);
+                TB_Reponse1.Text = GetReponseText(Reponse1);
+                TB_Reponse2.Text = GetReponseText(Reponse2);
+                TB_Reponse3.Text = GetReponseText(Reponse4);
+                TB_Reponse4.Text = GetReponseText(Reponse3);
             }
-            else if ( r == 3)
+            else if (r == 3)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse2);
-               TB_Reponse2.Text = GetReponseText(Reponse3);
-               TB_Reponse3.Text = GetReponseText(Reponse1);
-               TB_Reponse4.Text = GetReponseText(Reponse4);
+                TB_Reponse1.Text = GetReponseText(Reponse2);
+                TB_Reponse2.Text = GetReponseText(Reponse3);
+                TB_Reponse3.Text = GetReponseText(Reponse1);
+                TB_Reponse4.Text = GetReponseText(Reponse4);
             }
-            else if ( r == 4)
+            else if (r == 4)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse4);
-               TB_Reponse2.Text = GetReponseText(Reponse3);
-               TB_Reponse3.Text = GetReponseText(Reponse2);
-               TB_Reponse4.Text = GetReponseText(Reponse1);
+                TB_Reponse1.Text = GetReponseText(Reponse4);
+                TB_Reponse2.Text = GetReponseText(Reponse3);
+                TB_Reponse3.Text = GetReponseText(Reponse2);
+                TB_Reponse4.Text = GetReponseText(Reponse1);
             }
             else if (r == 5)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse3);
-               TB_Reponse2.Text = GetReponseText(Reponse4);
-               TB_Reponse3.Text = GetReponseText(Reponse1);
-               TB_Reponse4.Text = GetReponseText(Reponse2);
+                TB_Reponse1.Text = GetReponseText(Reponse3);
+                TB_Reponse2.Text = GetReponseText(Reponse4);
+                TB_Reponse3.Text = GetReponseText(Reponse1);
+                TB_Reponse4.Text = GetReponseText(Reponse2);
             }
             else if (r == 6)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse1);
-               TB_Reponse2.Text = GetReponseText(Reponse4);
-               TB_Reponse3.Text = GetReponseText(Reponse3);
-               TB_Reponse4.Text = GetReponseText(Reponse2);
+                TB_Reponse1.Text = GetReponseText(Reponse1);
+                TB_Reponse2.Text = GetReponseText(Reponse4);
+                TB_Reponse3.Text = GetReponseText(Reponse3);
+                TB_Reponse4.Text = GetReponseText(Reponse2);
             }
             else if (r == 7)
             {
-               TB_Reponse1.Text = GetReponseText(Reponse3);
-               TB_Reponse2.Text = GetReponseText(Reponse1);
-               TB_Reponse3.Text = GetReponseText(Reponse2);
-               TB_Reponse4.Text = GetReponseText(Reponse4);
+                TB_Reponse1.Text = GetReponseText(Reponse3);
+                TB_Reponse2.Text = GetReponseText(Reponse1);
+                TB_Reponse3.Text = GetReponseText(Reponse2);
+                TB_Reponse4.Text = GetReponseText(Reponse4);
             }
         }
 
-       private void ValiderReponse(string Reponse)
+        private void ValiderReponse(string Reponse)
         {
-           OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
-           oraliste.CommandText = "GESTIONINTELLICRACK.Valider_Reponse";
-           oraliste.CommandType = CommandType.StoredProcedure;
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.Valider_Reponse";
+            oraliste.CommandType = CommandType.StoredProcedure;
 
-           // Return Value
-           OracleParameter OrapameResultat = new OracleParameter("ENREMPLOYE", OracleDbType.Char,);
-           OrapameResultat.Direction = ParameterDirection.ReturnValue;
-           oraliste.Parameters.Add(OrapameResultat);
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("Rep", OracleDbType.Char, 1);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
 
-           // déclaration du paramètre en IN
-           OracleParameter OrapamDesc = new OracleParameter("FREPONSE", OracleDbType.Int32);
-           OrapamDesc.Value = GetNumQuestion();
-           OrapamDesc.Direction = ParameterDirection.Input;
-           oraliste.Parameters.Add(OrapamDesc);
+            // déclaration du paramètre en IN
+            OracleParameter OrapamDesc = new OracleParameter("FREPONSE", OracleDbType.Int32);
+            OrapamDesc.Value = GetNumReponse(Reponse);
+            OrapamDesc.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OrapamDesc);
 
-           OracleDataReader Oraread = oraliste.ExecuteReader();
+            oraliste.ExecuteNonQuery();
 
-          if(Oraread.Read())
-          {
-             if(Oraread.GetChar(0) == 'Y')
-             {
+            if (oraliste.Parameters["Rep"].Value.ToString() == "Y")
+            {
+                MessageBox.Show("Bonne Réponse!");
                 UpdateScore();
-             }
-          }
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Mauvaise Réponse");
+                this.Close();
+            }
         }
 
-       private void UpdateScore()
-       {
-          throw new NotImplementedException();
-       }
-       
-       private void TB_Reponse1_Click(object sender, EventArgs e)
+        private void UpdateScore()
         {
-           ValiderReponse(TB_Reponse1.Text);
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.Update_Score";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Paramètre de la catégorie
+            OracleParameter OrapameResultat = new OracleParameter("F_Categorie", OracleDbType.Char, 2);
+            OrapameResultat.Value = GetCodeCategorie(Category);
+            OrapameResultat.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OrapameResultat);
+
+            // Paramètre du numero du match
+            OracleParameter OraNumMatch = new OracleParameter("F_Categorie", OracleDbType.Char, 2);
+            OraNumMatch.Value = GetCodeCategorie(Category);
+            OraNumMatch.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraNumMatch);
+
+            // déclaration du paramètre en IN
+            OracleParameter OrapamDesc = new OracleParameter("F_Username", OracleDbType.Varchar2,30);
+            OrapamDesc.Value = Joueur;
+            OrapamDesc.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OrapamDesc);
+
+            oraliste.ExecuteNonQuery();
+        }
+
+        //Click the textbox = ValiderReponse
+        #region TB_Click
+        private void TB_Reponse1_Click(object sender, EventArgs e)
+        {
+            ValiderReponse(TB_Reponse1.Text);
         }
 
         private void TB_Reponse2_Click(object sender, EventArgs e)
         {
-           ValiderReponse(TB_Reponse2.Text);
+            ValiderReponse(TB_Reponse2.Text);
         }
 
         private void TB_Reponse3_Click(object sender, EventArgs e)
         {
-           ValiderReponse(TB_Reponse3.Text);
+            ValiderReponse(TB_Reponse3.Text);
         }
 
         private void TB_Reponse4_Click(object sender, EventArgs e)
         {
-           ValiderReponse(TB_Reponse4.Text);
+            ValiderReponse(TB_Reponse4.Text);
         }
+        #endregion
 
-       //Région avec les fonctions pour get des valeurs en SQL
+        //Région avec les fonctions pour get des valeurs en SQL
         #region GetSQL
-        private int GetNumQuestion()
+        private string GetQuestion()
         {
-            int numQ = 0;
-            string SQLCode = "SELECT NumQuestion FROM Questions WHERE EnonceQuestion = '" + Q +"'";
+            string Question = "";
+            string SQLCode = "SELECT EnonceQuestion FROM Questions WHERE NumQuestion = " + Q;
 
             OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
             orcmd.CommandType = CommandType.Text;
@@ -230,28 +262,28 @@ namespace TP1_BD
 
             if (orareader.Read())
             {
-                numQ = orareader.GetInt32(0);
+                Question = orareader.GetString(0);
             }
 
-            return numQ;
+            return Question;
         }
-       
-       private int GetNumReponse(string Reponse)
+
+        private int GetNumReponse(string Reponse)
         {
-           int  NumR = 0;
+            int NumR = 0;
 
-           string SQLCode = "SELECT NumReponse FROM Reponses WHERE Description = '" + Reponse + "'";
+            string SQLCode = "SELECT NumReponse FROM Reponses WHERE Description = '" + Reponse + "'";
 
-           OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
-           orcmd.CommandType = CommandType.Text;
-           OracleDataReader orareader = orcmd.ExecuteReader();
+            OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
+            orcmd.CommandType = CommandType.Text;
+            OracleDataReader orareader = orcmd.ExecuteReader();
 
-           if (orareader.Read())
-           {
-              NumR = orareader.GetInt32(0);
-           }
+            if (orareader.Read())
+            {
+                NumR = orareader.GetInt32(0);
+            }
 
-           return NumR;
+            return NumR;
         }
 
         private string GetReponseText(int NumRep)
@@ -294,6 +326,6 @@ namespace TP1_BD
         }
 
         #endregion
-        
+
     }
 }
