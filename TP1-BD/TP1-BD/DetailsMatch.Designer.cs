@@ -64,7 +64,7 @@
             // 
             // BTN_Statistiques
             // 
-            this.BTN_Statistiques.Location = new System.Drawing.Point(130, 183);
+            this.BTN_Statistiques.Location = new System.Drawing.Point(137, 183);
             this.BTN_Statistiques.Name = "BTN_Statistiques";
             this.BTN_Statistiques.Size = new System.Drawing.Size(185, 23);
             this.BTN_Statistiques.TabIndex = 42;
@@ -86,7 +86,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(90, 286);
+            this.groupBox1.Location = new System.Drawing.Point(84, 286);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(313, 133);
             this.groupBox1.TabIndex = 41;
@@ -207,17 +207,19 @@
             // 
             // TB_PositionClassement
             // 
-            this.TB_PositionClassement.Location = new System.Drawing.Point(171, 157);
+            this.TB_PositionClassement.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F);
+            this.TB_PositionClassement.Location = new System.Drawing.Point(178, 78);
             this.TB_PositionClassement.Name = "TB_PositionClassement";
             this.TB_PositionClassement.ReadOnly = true;
-            this.TB_PositionClassement.Size = new System.Drawing.Size(100, 20);
+            this.TB_PositionClassement.Size = new System.Drawing.Size(100, 21);
             this.TB_PositionClassement.TabIndex = 40;
+            this.TB_PositionClassement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(118, 136);
+            this.label3.Location = new System.Drawing.Point(126, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(207, 18);
             this.label3.TabIndex = 39;
@@ -227,7 +229,7 @@
             // 
             this.LB_Alias.AutoSize = true;
             this.LB_Alias.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Alias.Location = new System.Drawing.Point(205, 69);
+            this.LB_Alias.Location = new System.Drawing.Point(206, 147);
             this.LB_Alias.Name = "LB_Alias";
             this.LB_Alias.Size = new System.Drawing.Size(42, 18);
             this.LB_Alias.TabIndex = 38;
@@ -241,6 +243,7 @@
             this.BTN_Precedent.TabIndex = 37;
             this.BTN_Precedent.Text = "Précédent";
             this.BTN_Precedent.UseVisualStyleBackColor = true;
+            this.BTN_Precedent.Click += new System.EventHandler(this.BTN_Precedent_Click);
             // 
             // BTN_Suivant
             // 
@@ -250,12 +253,13 @@
             this.BTN_Suivant.TabIndex = 36;
             this.BTN_Suivant.Text = "Suivant";
             this.BTN_Suivant.UseVisualStyleBackColor = true;
+            this.BTN_Suivant.Click += new System.EventHandler(this.BTN_Suivant_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 9);
+            this.label1.Location = new System.Drawing.Point(125, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 27);
             this.label1.TabIndex = 35;

@@ -48,6 +48,11 @@ namespace TP1_BD
 
         }
 
+        /// <summary>
+        /// Affichage
+        /// Permet d'afficher les question et les réponses aléatoirement
+        /// </summary>
+        #region Affichage
         private void AfficherQuestion()
         {
             OracleCommand oracmd = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
@@ -166,7 +171,13 @@ namespace TP1_BD
                 TB_Reponse4.Text = GetReponseText(Reponse4);
             }
         }
+        #endregion
 
+        /// <summary>
+        /// ValiderReponse
+        /// Permet de vérifier si la réponse entrée est bonne ou non
+        /// </summary>
+        /// <param name="Reponse"></param>
         private void ValiderReponse(string Reponse)
         {
             OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
@@ -195,10 +206,15 @@ namespace TP1_BD
             else
             {
                 MessageBox.Show("Mauvaise Réponse");
+                Jeu.ChangerJoueurCourant();
                 this.Close();
             }
         }
 
+        /// <summary>
+        /// updateScore
+        /// Permet d'ajouter un point quand je joueur répond correctement à une question
+        /// </summary>
         private void UpdateScore()
         {
             OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);

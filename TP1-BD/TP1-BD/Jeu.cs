@@ -14,13 +14,20 @@ namespace TP1_BD
 {
     public partial class Jeu : Form
     {
-        string J1;
-        string J2;
-        string J3;
-        string J4;
-        public static int NumMatch; 
-        string JoueurCourant;
+        public static string J1;
+        public static string J2;
+        public static string J3;
+        public static string J4;
+        public static int NumMatch;
+        public static string Premier;
+        public static string JoueurCourant;
 
+        /// <summary>
+        /// Constructeurs
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        #region Constructeurs
         public Jeu(String j1, String j2)
         {
             InitializeComponent();
@@ -29,8 +36,6 @@ namespace TP1_BD
             CreerMatch(2);
             AfficherJoueurs();
         }
-
-        
         public Jeu(String j1, String j2, String j3)
         {
             InitializeComponent();
@@ -50,7 +55,13 @@ namespace TP1_BD
             CreerMatch(4);
             AfficherJoueurs();
         }
+        #endregion
 
+        /// <summary>
+        /// CreerMatch
+        /// Permet de créer un match de différents joueurs
+        /// </summary>
+        /// <param name="NbJoueurs"></param>
         private void CreerMatch(int NbJoueurs)
         {
             OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
@@ -74,7 +85,7 @@ namespace TP1_BD
             OraJ2.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OraJ2);
 
-            if(NbJoueurs >= 3)
+            if (NbJoueurs >= 3)
             {
                 // déclaration du paramètre en IN
                 OracleParameter OraJ3 = new OracleParameter("F_J3", OracleDbType.Varchar2, 30);
@@ -82,7 +93,7 @@ namespace TP1_BD
                 OraJ3.Direction = ParameterDirection.Input;
                 oraliste.Parameters.Add(OraJ3);
 
-                if(NbJoueurs == 4)
+                if (NbJoueurs == 4)
                 {
                     OracleParameter OraJ4 = new OracleParameter("F_J4", OracleDbType.Varchar2, 30);
                     OraJ4.Value = J4;
@@ -96,8 +107,14 @@ namespace TP1_BD
 
             // Mettre le JoueurCourant à J1
             ChangerJoueurCourant(true);
+            // Afficher le joueur courant dans le Label
+            LB_Turn.Text = JoueurCourant;
         }
 
+        /// <summary>
+        /// Permet d'afficher les données
+        /// </summary>
+        #region Affichage
         private void AfficherJoueurs()
         {
             JoueurCourant = J1;
@@ -108,19 +125,57 @@ namespace TP1_BD
                 TB_Classement3.Text = J3;
             else
                 TB_Classement3.Text = "N/A";
-            if(J4 != null)
+            if (J4 != null)
                 TB_Classement4.Text = J4;
-            else 
+            else
                 TB_Classement4.Text = "N/A";
 
             LB_Points1.Text = "0";
             LB_Points2.Text = "0";
             LB_Points3.Text = "0";
             LB_Points4.Text = "0";
+
         }
 
+        private void AfficherPoints()
+        {
+            string SQLAfficher = "SELECT USERNAME, SUM(SCORE) FROM SCORES WHERE NUMMATCH = " + NumMatch + " GROUP BY USERNAME ORDER BY SUM(SCORE) DESC";
+            OracleCommand orcmd1 = new OracleCommand(SQLAfficher, Connexion.oraconn);
+            orcmd1.CommandType = CommandType.Text;
+            OracleDataReader oraread = orcmd1.ExecuteReader();
+
+            if (oraread.Read())
+            {
+                TB_Classement1.Text = oraread.GetString(0);
+                LB_Points1.Text = oraread.GetInt32(1).ToString();
+            }
+            if(oraread.Read())
+            {
+                TB_Classement2.Text = oraread.GetString(0);
+                LB_Points2.Text = oraread.GetInt32(1).ToString();
+            }
+            if (oraread.Read())
+            {
+                TB_Classement3.Text = oraread.GetString(0);
+                LB_Points3.Text = oraread.GetInt32(1).ToString();
+            }
+            if (oraread.Read())
+            {
+                TB_Classement4.Text = oraread.GetString(0);
+                LB_Points4.Text = oraread.GetInt32(1).ToString();
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Boutons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region Boutons
         private void BTN_DetailsClassement_Click(object sender, EventArgs e)
         {
+            Premier = TB_Classement1.Text;
             DetailsMatch detailsMatch = new DetailsMatch();
             detailsMatch.ShowDialog();
         }
@@ -158,22 +213,28 @@ namespace TP1_BD
                     cat = choix.Categorie;
                 }
             }
-            
+
             /////////// À MODIFIER /////////// TEMPORAIRE PCQ IL MANQUE LES QUESTIONS DE SCIENCES ////////
             RepondreQuestion rep;
-            if(cat != 1)
-            {
-                rep = new RepondreQuestion(cat,JoueurCourant);
-            
-                rep.ShowDialog();
-                ChangerJoueurCourant();
-            }
-                 
-        }
+            rep = new RepondreQuestion(cat, JoueurCourant);
 
-        private void ChangerJoueurCourant(bool PremierTour = false)
+            rep.ShowDialog();
+
+            // Afficher le joueur courant dans le Label
+            LB_Turn.Text = JoueurCourant;
+
+            AfficherPoints();
+        }
+        #endregion
+
+        /// <summary>
+        /// ChangerJoueurCourant
+        /// Permet de changer le tour du joueurs quand il rate une question
+        /// </summary>
+        /// <param name="PremierTour"></param>
+        public static void ChangerJoueurCourant(bool PremierTour = false)
         {
-            if(PremierTour)
+            if (PremierTour)
             {
                 JoueurCourant = J1;
             }
@@ -185,9 +246,9 @@ namespace TP1_BD
                     JoueurCourant = J2;
                 }
                 // Changer de J2 à J3 ou de J2 à J1
-                else if(JoueurCourant == J2)
+                else if (JoueurCourant == J2)
                 {
-                    if(J3 != null)
+                    if (J3 != null)
                     {
                         JoueurCourant = J3;
                     }
@@ -197,9 +258,9 @@ namespace TP1_BD
                     }
                 }
                 // Changer de J3 à J4 ou de J3 à J1
-                else if(JoueurCourant == J3)
+                else if (JoueurCourant == J3)
                 {
-                    if(J4 != null)
+                    if (J4 != null)
                     {
                         JoueurCourant = J4;
                     }
@@ -214,8 +275,6 @@ namespace TP1_BD
                     JoueurCourant = J1;
                 }
             }
-            // Afficher le joueur courant dans le Label
-            LB_Turn.Text = JoueurCourant;
         }
     }
 }
