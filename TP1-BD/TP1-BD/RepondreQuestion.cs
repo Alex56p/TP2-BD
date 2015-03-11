@@ -76,7 +76,22 @@ namespace TP1_BD
             Q = oracmd.Parameters["retval"].Value.ToString();
 
             LB_Question.Text = GetQuestion();
+            ChangerFlag();
         }
+
+        private void ChangerFlag()
+        {
+            OracleCommand oraAjout = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraAjout.CommandText = "GESTIONINTELLICRACK.Changer_Flag";
+            oraAjout.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter orapamNum = new OracleParameter("p_NumQuestion", OracleDbType.Int32);
+            orapamNum.Direction = ParameterDirection.Input;
+            orapamNum.Value = Q;
+            oraAjout.Parameters.Add(orapamNum);
+
+            // Le reste des paramètres
+            oraAjout.ExecuteNonQuery();        }
 
         private void AfficherReponses()
         {

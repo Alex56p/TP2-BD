@@ -35,6 +35,7 @@ namespace TP1_BD
             J2 = j2;
             CreerMatch(2);
             AfficherJoueurs();
+            ResetFlag();
         }
         public Jeu(String j1, String j2, String j3)
         {
@@ -44,6 +45,7 @@ namespace TP1_BD
             J3 = j3;
             CreerMatch(3);
             AfficherJoueurs();
+            ResetFlag();
         }
         public Jeu(String j1, String j2, String j3, String j4)
         {
@@ -54,8 +56,22 @@ namespace TP1_BD
             J4 = j4;
             CreerMatch(4);
             AfficherJoueurs();
+            ResetFlag();
         }
         #endregion
+
+        /// <summary>
+        /// ResetFlag
+        /// Permet de remetre le flag a N dans toutes les questions
+        /// </summary>
+        private void ResetFlag()
+        {
+            OracleCommand oraAjout = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraAjout.CommandText = "GESTIONINTELLICRACK.Reset_Flag";
+            oraAjout.CommandType = CommandType.StoredProcedure;
+
+            oraAjout.ExecuteNonQuery();
+        }
 
         /// <summary>
         /// CreerMatch
