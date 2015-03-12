@@ -53,10 +53,8 @@
             this.TB_QRates = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TB_NombreDefaites = new System.Windows.Forms.TextBox();
-            this.BTN_Alias = new System.Windows.Forms.Label();
-            this.BTN_Precedent = new System.Windows.Forms.Button();
-            this.BTN_Suivant = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.CB_Alias = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +137,7 @@
             this.TB_Science.ReadOnly = true;
             this.TB_Science.Size = new System.Drawing.Size(100, 20);
             this.TB_Science.TabIndex = 24;
+            this.TB_Science.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_Divertissement
             // 
@@ -147,6 +146,7 @@
             this.TB_Divertissement.ReadOnly = true;
             this.TB_Divertissement.Size = new System.Drawing.Size(100, 20);
             this.TB_Divertissement.TabIndex = 23;
+            this.TB_Divertissement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -175,6 +175,7 @@
             this.TB_JeuxVideo.ReadOnly = true;
             this.TB_JeuxVideo.Size = new System.Drawing.Size(100, 20);
             this.TB_JeuxVideo.TabIndex = 19;
+            this.TB_JeuxVideo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_Sport
             // 
@@ -183,6 +184,7 @@
             this.TB_Sport.ReadOnly = true;
             this.TB_Sport.Size = new System.Drawing.Size(100, 20);
             this.TB_Sport.TabIndex = 17;
+            this.TB_Sport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -240,6 +242,7 @@
             this.TB_NbPartiesJoues.ReadOnly = true;
             this.TB_NbPartiesJoues.Size = new System.Drawing.Size(100, 20);
             this.TB_NbPartiesJoues.TabIndex = 16;
+            this.TB_NbPartiesJoues.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -258,6 +261,7 @@
             this.TB_NombreVictoires.ReadOnly = true;
             this.TB_NombreVictoires.Size = new System.Drawing.Size(100, 20);
             this.TB_NombreVictoires.TabIndex = 15;
+            this.TB_NombreVictoires.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -276,6 +280,7 @@
             this.TB_QReussites.ReadOnly = true;
             this.TB_QReussites.Size = new System.Drawing.Size(100, 20);
             this.TB_QReussites.TabIndex = 14;
+            this.TB_QReussites.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -294,6 +299,7 @@
             this.TB_QRates.ReadOnly = true;
             this.TB_QRates.Size = new System.Drawing.Size(100, 20);
             this.TB_QRates.TabIndex = 13;
+            this.TB_QRates.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -312,34 +318,7 @@
             this.TB_NombreDefaites.ReadOnly = true;
             this.TB_NombreDefaites.Size = new System.Drawing.Size(100, 20);
             this.TB_NombreDefaites.TabIndex = 12;
-            // 
-            // BTN_Alias
-            // 
-            this.BTN_Alias.AutoSize = true;
-            this.BTN_Alias.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Alias.Location = new System.Drawing.Point(205, 63);
-            this.BTN_Alias.Name = "BTN_Alias";
-            this.BTN_Alias.Size = new System.Drawing.Size(42, 18);
-            this.BTN_Alias.TabIndex = 23;
-            this.BTN_Alias.Text = "Alias";
-            // 
-            // BTN_Precedent
-            // 
-            this.BTN_Precedent.Location = new System.Drawing.Point(12, 60);
-            this.BTN_Precedent.Name = "BTN_Precedent";
-            this.BTN_Precedent.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Precedent.TabIndex = 22;
-            this.BTN_Precedent.Text = "Précédent";
-            this.BTN_Precedent.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Suivant
-            // 
-            this.BTN_Suivant.Location = new System.Drawing.Point(373, 60);
-            this.BTN_Suivant.Name = "BTN_Suivant";
-            this.BTN_Suivant.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Suivant.TabIndex = 21;
-            this.BTN_Suivant.Text = "Suivant";
-            this.BTN_Suivant.UseVisualStyleBackColor = true;
+            this.TB_NombreDefaites.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -351,18 +330,26 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Statistiques";
             // 
+            // CB_Alias
+            // 
+            this.CB_Alias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Alias.FormattingEnabled = true;
+            this.CB_Alias.Location = new System.Drawing.Point(163, 60);
+            this.CB_Alias.Name = "CB_Alias";
+            this.CB_Alias.Size = new System.Drawing.Size(121, 21);
+            this.CB_Alias.TabIndex = 27;
+            this.CB_Alias.SelectedIndexChanged += new System.EventHandler(this.CB_Alias_SelectedIndexChanged);
+            // 
             // StatsJoueur
             // 
             this.AcceptButton = this.BTN_Ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 478);
+            this.Controls.Add(this.CB_Alias);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BTN_Alias);
-            this.Controls.Add(this.BTN_Precedent);
-            this.Controls.Add(this.BTN_Suivant);
             this.Controls.Add(this.label1);
             this.Name = "StatsJoueur";
             this.Text = "StatsJoueur";
@@ -402,9 +389,7 @@
         private System.Windows.Forms.TextBox TB_QRates;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TB_NombreDefaites;
-        private System.Windows.Forms.Label BTN_Alias;
-        private System.Windows.Forms.Button BTN_Precedent;
-        private System.Windows.Forms.Button BTN_Suivant;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CB_Alias;
     }
 }

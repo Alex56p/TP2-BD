@@ -128,7 +128,7 @@ EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Qui a énoncé les lois en lien
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Laquelle des interaction suivantes ne survient pas entre deux espèces?', 'Animation', 'Compétition', 'Prédation' , 'Commensalisme');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Que ne retrouve t''on pas dans une cellule?', 'Électrons', 'Cytoplasme', 'Noyau' , 'Réticulum endoplasmique');
 
-
+COMMIT;
 
 
 

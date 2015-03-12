@@ -32,7 +32,7 @@ namespace TP1_BD
         #region Boutons
         private void BTN_Statistiques_Click(object sender, EventArgs e)
         {
-            StatsJoueur stats = new StatsJoueur();
+            StatsJoueur stats = new StatsJoueur(LB_Alias.Text);
             stats.ShowDialog();
         }
 

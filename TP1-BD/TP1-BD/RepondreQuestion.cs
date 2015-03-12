@@ -91,7 +91,8 @@ namespace TP1_BD
             oraAjout.Parameters.Add(orapamNum);
 
             // Le reste des paramètres
-            oraAjout.ExecuteNonQuery();        }
+            oraAjout.ExecuteNonQuery();
+        }
 
         private void AfficherReponses()
         {
