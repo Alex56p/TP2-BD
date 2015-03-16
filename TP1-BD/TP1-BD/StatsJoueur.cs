@@ -97,12 +97,62 @@ namespace TP1_BD
 
         private void AfficherVictoiresDefaites()
         {
-            // À FAIRE DANS SQL
+            // Nombre de victoires
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.GetNbVictoires";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("NbVictoires", OracleDbType.Int32);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
+
+            // Paramètre Joueur1
+            OracleParameter OraJ = new OracleParameter("P_J", OracleDbType.Varchar2, 30);
+            OraJ.Value = Alias;
+            OraJ.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ);
+
+            oraliste.ExecuteNonQuery();
+
+            TB_NombreVictoires.Text = oraliste.Parameters["NbVictoires"].Value.ToString();
+
+
+            //Nombre de défaites
+
+            TB_NombreDefaites.Text = (Convert.ToInt32(TB_NbPartiesJoues.Text) - Convert.ToInt32(TB_NombreVictoires.Text)).ToString();
         }
 
         private void AfficherQuestionsReussitesRates()
         {
-            // À FAIRE DANS SQL (AJOUTER COLONNE REUSSITES)
+            /////////////////////////////////////////////
+            //          Questions Réussites
+            /////////////////////////////////////////////
+            string SQLAfficher = "SELECT SUM(SCORE) FROM SCORES WHERE USERNAME = '" + Alias + "'";
+
+            OracleCommand orcmd = new OracleCommand(SQLAfficher, Connexion.oraconn);
+            orcmd.CommandType = CommandType.Text;
+            OracleDataReader orareader = orcmd.ExecuteReader();
+
+            if (orareader.Read())
+            {
+                TB_QReussites.Text = orareader.GetInt32(0).ToString();
+            }
+
+            /////////////////////////////////////////////
+            //          Questions Ratées
+            /////////////////////////////////////////////
+            string SQLAfficher1 = "SELECT SUM(NBQuestionsRepondues) FROM SCORES WHERE USERNAME = '" + Alias + "'";
+
+            OracleCommand orcmd2 = new OracleCommand(SQLAfficher1, Connexion.oraconn);
+            orcmd2.CommandType = CommandType.Text;
+            OracleDataReader orareader2 = orcmd2.ExecuteReader();
+
+            if (orareader2.Read())
+            {
+                TB_QRates.Text = (orareader2.GetInt32(0) - Convert.ToInt32(TB_QReussites.Text)).ToString();
+            }
+
         }
         #endregion
 

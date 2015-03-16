@@ -212,6 +212,7 @@ namespace TP1_BD
             oraliste.Parameters.Add(OrapamDesc);
 
             oraliste.ExecuteNonQuery();
+            UpdateNbQuestionsRepondues();
 
             if (oraliste.Parameters["Rep"].Value.ToString() == "Y")
             {
@@ -235,6 +236,33 @@ namespace TP1_BD
         {
             OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
             oraliste.CommandText = "GESTIONINTELLICRACK.Update_Score";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Paramètre de la catégorie
+            OracleParameter OrapameResultat = new OracleParameter("FCATEGORIE", OracleDbType.Char, 2);
+            OrapameResultat.Value = GetCodeCategorie(Category);
+            OrapameResultat.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OrapameResultat);
+
+            // Paramètre du numero du match
+            OracleParameter OraNumMatch = new OracleParameter("F_NumMatch", OracleDbType.Int32);
+            OraNumMatch.Value = Jeu.NumMatch;
+            OraNumMatch.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraNumMatch);
+
+            // déclaration du paramètre en IN
+            OracleParameter OrapamDesc = new OracleParameter("F_UserName", OracleDbType.Varchar2, 30);
+            OrapamDesc.Value = Joueur;
+            OrapamDesc.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OrapamDesc);
+
+            oraliste.ExecuteNonQuery();
+        }
+
+        private void UpdateNbQuestionsRepondues()
+        {
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.UpdateNbQuestionsRepondues";
             oraliste.CommandType = CommandType.StoredProcedure;
 
             // Paramètre de la catégorie

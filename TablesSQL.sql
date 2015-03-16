@@ -65,7 +65,8 @@ CREATE TABLE SCORES
     CodeCategorie CHAR (2) NOT NULL ,
     UserName         VARCHAR2(30) NOT NULL ,
     Score         NUMBER ,
-    NumMatch      NUMBER NOT NULL
+    NumMatch      NUMBER NOT NULL,
+    NbQuestionsRepondues NUMBER	
   ) ;
 ALTER TABLE SCORES ADD CONSTRAINT SCORES_PK PRIMARY KEY ( CodeCategorie, UserName, NumMatch ) ;
 
