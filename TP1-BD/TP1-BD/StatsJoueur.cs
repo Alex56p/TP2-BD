@@ -64,21 +64,35 @@ namespace TP1_BD
             {
                 CB_Alias.Items.Add(orareader.GetString(0));
             }
+            if (Alias == null)
+            {
+                Alias = CB_Alias.Items[0].ToString();
+                CB_Alias.SelectedItem = Alias;
+            }
+                
         }
 
         private void AfficherNombrePartiesJoues()
         {
             // Mettre la catégorie a Sp pour afficher seulement une categorie par match
-            string SQLAfficher = "SELECT COUNT(*) FROM SCORES WHERE USERNAME = '" + Alias + "' AND CODECATEGORIE = 'Sp'";
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.GetNbMatch";
+            oraliste.CommandType = CommandType.StoredProcedure;
 
-            OracleCommand orcmd = new OracleCommand(SQLAfficher, Connexion.oraconn);
-            orcmd.CommandType = CommandType.Text;
-            OracleDataReader orareader = orcmd.ExecuteReader();
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("NbMatch", OracleDbType.Int32);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
 
-            if (orareader.Read())
-            {
-                TB_NbPartiesJoues.Text = orareader.GetInt32(0).ToString();
-            }
+            // Paramètre Joueur1
+            OracleParameter OraJ = new OracleParameter("P_J", OracleDbType.Varchar2, 30);
+            OraJ.Value = Alias;
+            OraJ.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ);
+
+            oraliste.ExecuteNonQuery();
+
+            TB_NbPartiesJoues.Text = oraliste.Parameters["NbMatch"].Value.ToString();
         }
 
         private void AfficherVictoiresDefaites()
@@ -102,6 +116,7 @@ namespace TP1_BD
         {
             Alias = CB_Alias.SelectedItem.ToString();
             AfficherStatsGenerales();
+            AfficherStatsCategories();
         }
         #endregion
 

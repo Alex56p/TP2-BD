@@ -21,6 +21,7 @@ namespace TP1_BD
         public static int NumMatch;
         public static string Premier;
         public static string JoueurCourant;
+        public static bool Match_Fini = false;
 
         /// <summary>
         /// Constructeurs
@@ -230,16 +231,26 @@ namespace TP1_BD
                 }
             }
 
-            /////////// À MODIFIER /////////// TEMPORAIRE PCQ IL MANQUE LES QUESTIONS DE SCIENCES ////////
             RepondreQuestion rep;
             rep = new RepondreQuestion(cat, JoueurCourant);
 
             rep.ShowDialog();
 
+            
+
             // Afficher le joueur courant dans le Label
             LB_Turn.Text = JoueurCourant;
 
             AfficherPoints();
+            
+            PartieGagne(JoueurCourant);
+
+            if(Match_Fini)
+            {
+                MessageBox.Show(JoueurCourant + "a gagné la partie!");
+                BTN_Tourner.Enabled = false;
+            }
+
         }
         #endregion
 
@@ -291,6 +302,38 @@ namespace TP1_BD
                     JoueurCourant = J1;
                 }
             }
+        }
+
+        public void PartieGagne(String Joueur)
+        {
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.Match_Fini";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("Fini", OracleDbType.Char, 1);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
+
+            // Paramètre Joueur1
+            OracleParameter OraJ = new OracleParameter("P_J", OracleDbType.Varchar2, 30);
+            OraJ.Value = Joueur;
+            OraJ.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ);
+
+            // Paramètre NumMatch
+            OracleParameter OraNumMatch = new OracleParameter("P_NumMatch", OracleDbType.Int32);
+            OraNumMatch.Value = NumMatch;
+            OraNumMatch.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraNumMatch);
+
+            oraliste.ExecuteNonQuery();
+            string Fini = oraliste.Parameters["Fini"].Value.ToString();
+
+            if (Fini == "Y")
+                Match_Fini = true;
+            else
+                Match_Fini = false;
         }
     }
 }

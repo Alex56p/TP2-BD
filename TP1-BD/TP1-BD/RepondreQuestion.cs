@@ -304,7 +304,7 @@ namespace TP1_BD
         {
             int NumR = 0;
 
-            string SQLCode = "SELECT NumReponse FROM Reponses WHERE Description = '" + Reponse + "'";
+            string SQLCode = "SELECT NumReponse FROM Reponses WHERE Description = '" + Reponse + "' AND NUMQUESTION = " + Q;
 
             OracleCommand orcmd = new OracleCommand(SQLCode, Connexion.oraconn);
             orcmd.CommandType = CommandType.Text;
