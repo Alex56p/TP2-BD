@@ -22,12 +22,6 @@ EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('Alex56p', 'Parent', 'Alexis');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('xLeafing', 'Caron', 'Samuel');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('batterie AAA', 'Deschamps', 'Arthur');
 
-------------------------------------
---             Match              -- 
-------------------------------------
-EXECUTE GESTIONINTELLICRACK.Ajouter_Match('PoneyLoverXz', 'Alex56p', 'xLeafing', 'batterie AAA');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Match('PoneyLoverXz', 'Alex56p', 'xLeafing');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Match('PoneyLoverXz', 'Alex56p');
 
 ------------------------------------
 --        Questions Sport         -- 

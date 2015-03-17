@@ -122,13 +122,15 @@ namespace TP1_BD
             
             if (orareader.Read())
             {
+                orareader.Close();
                 return true;
             }
             else
             {
+                orareader.Close();
                 return false;
             }
-
+            
         }
 
         /// <summary>

@@ -3,7 +3,6 @@ C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\bin\Debug\TP1-BD.exe
 C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\bin\Debug\TP1-BD.pdb
 C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP2-BD.csprojResolveAssemblyReference.cache
 C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.AjouterQuestion.resources
-C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.Classement.resources
 C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.DetailsMatch.resources
 C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.Connexion.resources
 C:\Users\Alexis\Desktop\TP2-BD\TP1-BD\TP1-BD\obj\Debug\TP1_BD.Inscription.resources

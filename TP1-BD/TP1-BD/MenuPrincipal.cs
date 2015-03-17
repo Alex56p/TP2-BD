@@ -81,18 +81,6 @@ namespace TP1_BD
             AjouterQuestion ajouterQuestion = new AjouterQuestion();
             ajouterQuestion.ShowDialog();
         }
-
-        /// <summary>
-        /// BTN_Classement_Click
-        /// Permet d'ouvrir le form Classement
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BTN_Classement_Click(object sender, EventArgs e)
-        {
-            Classement classement = new Classement();
-            classement.ShowDialog();
-        }
         #endregion
 
         /// <summary>
@@ -113,6 +101,7 @@ namespace TP1_BD
                 TB_Nom.Text = orareader.GetString(1);
                 TB_Prenom.Text = orareader.GetString(2);
             }
+            orareader.Close();
         }
     }
 }

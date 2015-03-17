@@ -69,6 +69,7 @@ namespace TP1_BD
                 CB_Joueur3.Items.Add(oraread.GetString(0));
                 CB_Joueur4.Items.Add(oraread.GetString(0));
             }
+            oraread.Close();
         }
 
         private bool CanStart()

@@ -56,6 +56,7 @@ namespace TP1_BD
             {
                 CB_Categories.Items.Add(oraread.GetString(0));
             }
+            oraread.Close();
         }
 
         /// <summary>
@@ -166,6 +167,7 @@ namespace TP1_BD
             {
                 codeCategorie = orareader.GetString(0);
             }
+            orareader.Close();
 
             //oraAjout.ExecuteNonQuery();
             return codeCategorie;

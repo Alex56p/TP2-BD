@@ -30,7 +30,6 @@
       {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BTN_Statistiques = new System.Windows.Forms.Button();
-            this.BTN_Classement = new System.Windows.Forms.Button();
             this.BTN_CommencerPartie = new System.Windows.Forms.Button();
             this.BTN_Quitter = new System.Windows.Forms.Button();
             this.BTN_AjouterQuestion = new System.Windows.Forms.Button();
@@ -49,7 +48,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.BTN_Statistiques);
-            this.groupBox2.Controls.Add(this.BTN_Classement);
             this.groupBox2.Controls.Add(this.BTN_CommencerPartie);
             this.groupBox2.Controls.Add(this.BTN_Quitter);
             this.groupBox2.Controls.Add(this.BTN_AjouterQuestion);
@@ -73,17 +71,6 @@
             this.BTN_Statistiques.Text = "Statistiques...";
             this.BTN_Statistiques.UseVisualStyleBackColor = true;
             this.BTN_Statistiques.Click += new System.EventHandler(this.BTN_Statistiques_Click);
-            // 
-            // BTN_Classement
-            // 
-            this.BTN_Classement.Location = new System.Drawing.Point(23, 144);
-            this.BTN_Classement.Margin = new System.Windows.Forms.Padding(4);
-            this.BTN_Classement.Name = "BTN_Classement";
-            this.BTN_Classement.Size = new System.Drawing.Size(189, 28);
-            this.BTN_Classement.TabIndex = 7;
-            this.BTN_Classement.Text = "Classement...";
-            this.BTN_Classement.UseVisualStyleBackColor = true;
-            this.BTN_Classement.Click += new System.EventHandler(this.BTN_Classement_Click);
             // 
             // BTN_CommencerPartie
             // 
@@ -229,7 +216,6 @@
 
       private System.Windows.Forms.GroupBox groupBox2;
       private System.Windows.Forms.Button BTN_Statistiques;
-      private System.Windows.Forms.Button BTN_Classement;
       private System.Windows.Forms.Button BTN_CommencerPartie;
       private System.Windows.Forms.Button BTN_Quitter;
       private System.Windows.Forms.Button BTN_AjouterQuestion;

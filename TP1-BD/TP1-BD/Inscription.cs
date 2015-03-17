@@ -128,11 +128,13 @@ namespace TP1_BD
             if (orareader.Read())
             {
                 BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.None;
+                orareader.Close();
                 return true;
             }
             else
             {
                 BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
+                orareader.Close();
                 return false;
             }
         }

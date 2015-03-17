@@ -69,7 +69,8 @@ namespace TP1_BD
                 Alias = CB_Alias.Items[0].ToString();
                 CB_Alias.SelectedItem = Alias;
             }
-                
+            orareader.Close();
+
         }
 
         private void AfficherNombrePartiesJoues()
@@ -138,6 +139,7 @@ namespace TP1_BD
             {
                 TB_QReussites.Text = orareader.GetInt32(0).ToString();
             }
+            orareader.Close();
 
             /////////////////////////////////////////////
             //          Questions Ratées
@@ -152,6 +154,8 @@ namespace TP1_BD
             {
                 TB_QRates.Text = (orareader2.GetInt32(0) - Convert.ToInt32(TB_QReussites.Text)).ToString();
             }
+            orareader2.Close();
+
 
         }
         #endregion
@@ -191,6 +195,7 @@ namespace TP1_BD
             {
                 TB_Sport.Text = orareader.GetInt32(0).ToString();
             }
+            orareader.Close();
         }
 
         private void StatsDivertissement()
@@ -205,6 +210,8 @@ namespace TP1_BD
             {
                 TB_Divertissement.Text = orareader.GetInt32(0).ToString();
             }
+            orareader.Close();
+
         }
 
         private void StatsJeuxVideo()
@@ -219,6 +226,8 @@ namespace TP1_BD
             {
                 TB_JeuxVideo.Text = orareader.GetInt32(0).ToString();
             }
+            orareader.Close();
+
 
         }
 
@@ -234,7 +243,7 @@ namespace TP1_BD
             {
                 TB_Science.Text = orareader.GetInt32(0).ToString();
             }
-
+            orareader.Close();
         }
         #endregion
     }

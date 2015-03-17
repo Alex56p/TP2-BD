@@ -181,6 +181,7 @@ namespace TP1_BD
                 TB_Classement4.Text = oraread.GetString(0);
                 LB_Points4.Text = oraread.GetInt32(1).ToString();
             }
+            oraread.Close();
         }
         #endregion
 

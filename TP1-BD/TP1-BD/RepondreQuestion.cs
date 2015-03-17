@@ -127,9 +127,10 @@ namespace TP1_BD
                         Reponse4 = Oraread.GetInt32(0);
                 }
             }
+            Oraread.Close();
 
             Random random = new Random();
-            int r = random.Next(0, 8);
+            int r = random.Next(0, 10);
             if (r == 0)
             {
                 TB_Reponse1.Text = GetReponseText(Reponse1);
@@ -185,6 +186,20 @@ namespace TP1_BD
                 TB_Reponse2.Text = GetReponseText(Reponse1);
                 TB_Reponse3.Text = GetReponseText(Reponse2);
                 TB_Reponse4.Text = GetReponseText(Reponse4);
+            }
+            else if (r == 8)
+            {
+                TB_Reponse1.Text = GetReponseText(Reponse4);
+                TB_Reponse2.Text = GetReponseText(Reponse1);
+                TB_Reponse3.Text = GetReponseText(Reponse2);
+                TB_Reponse4.Text = GetReponseText(Reponse3);
+            }
+            else if(r == 9)
+            {
+                TB_Reponse1.Text = GetReponseText(Reponse2);
+                TB_Reponse2.Text = GetReponseText(Reponse3);
+                TB_Reponse3.Text = GetReponseText(Reponse4);
+                TB_Reponse4.Text = GetReponseText(Reponse1);
             }
         }
         #endregion
@@ -324,6 +339,7 @@ namespace TP1_BD
             {
                 Question = orareader.GetString(0);
             }
+            orareader.Close();
 
             return Question;
         }
@@ -342,6 +358,7 @@ namespace TP1_BD
             {
                 NumR = orareader.GetInt32(0);
             }
+            orareader.Close();
 
             return NumR;
         }
@@ -359,6 +376,7 @@ namespace TP1_BD
             {
                 Rep = orareader.GetString(0);
             }
+            orareader.Close();
 
             return Rep;
         }

@@ -75,6 +75,7 @@ namespace TP1_BD
 
                 TB_PositionClassement.Text = (this.BindingContext[JoueursDS, "SCORES"].Position + 1).ToString();
             }
+            oraread.Close();
 
             // Afficher les points du joueur
             AfficherPoints();
@@ -108,6 +109,7 @@ namespace TP1_BD
             {
                 TB_Sport.Text = oraread.GetInt32(0).ToString();
             }
+            oraread.Close();
         }
         #endregion
     }
