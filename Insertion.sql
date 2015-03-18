@@ -33,7 +33,7 @@ EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Quel pays a remporté la coupe
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Quel joueuse de tennis québécoise s''est rendu à la finale de Wimbledon?', 'Eugénie Bouchard', 'PK Subban', 'Venus Williams' , 'Maria Sharapova');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Quel joueur de la LNH a gagné le trophée Hart dans la saison 2013-2014?', 'Sydney Crosby', 'Steven Stamkos', 'Carey Price' , 'Alex Ovechkin');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Quel équipe a gagné la coupe Stanley en 2012-2013?', 'Chicago Blackhawks', 'Boston Bruins', 'LA Kings' , 'Montreal Canadiens');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Qui est le capitaine du Canadiens en 2014-2015?', 'Il n''y a pas de capitaine', 'Carey Price', 'Max Pacioretty' , 'PK Subban');
+EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Qui est le capitaine du Canadiens en 2014-2015?', 'Il n y a pas de capitaine', 'Carey Price', 'Max Pacioretty' , 'PK Subban');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Quel joueur a le plus de points dans l''histoire du Canadiens de Montréal?', 'Guy Lafleur', 'Maurice Richard', 'Jean Béliveau' , 'Saku Koivu');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Quel est l''équipe de la LNH installé à Nashville?', 'Predators', 'Sharks', 'Panthers' , 'Blues');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sp','Qui a gagné la coupe Stanley en 2014?', 'Kings de LosAngeles', 'Predateurs de Nashville', 'Canadiens de Montréal' , 'Bruins de Boston');
@@ -61,7 +61,7 @@ EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Quel personnage de jeu vidéo 
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','De quel franchise vient le personnage Master Chief"?', 'Halo', 'Nintendo', 'Steam' , 'Sony');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Quel est le nom de la première console de Microsoft?', 'Xbox', 'Xbox One', 'Xbox 360' , 'Xbox Zero');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Dans quel franchise est-ce que Samus figure-t-elle?"', 'Metroid', 'Zelda', 'Super Mario Bros' , 'Super Smash Bros');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Qui a créé le jeu Minecraft?', 'Mojan', 'Bungie', 'Rockrtar Games' , 'EA Games');
+EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Qui a créé le jeu Minecraft?', 'Mojan', 'Bungie', 'Rockstar Games' , 'EA Games');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Lequel parmi les suivants est l''un des personnage de Grand Theft Auto 5?', 'Tervor', 'John', 'Moe' , 'Max');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Quel est le jeu où on peut jouer de la batterie?', 'RockBand', 'Guitar Hero', 'RockSmith0' , 'DrumHero');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Jv','Quelle est la première console portable à avoir une écran tactile', 'Nitendo DS', 'GameBoy', 'PSP' , 'Xbox 360');
@@ -86,7 +86,7 @@ EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Quel acteur n''a pas joué le 
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Quel est le prénom de Batman?', 'Bruce', 'Peter', 'George' , 'Brian');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Lequel de ces hommes a déjà gagné un Oscar?', 'Jamie Foxx', 'Leonardo DiCaprio', 'Robert Downey Jr.' , 'Edward Norton');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Combien d''Oscar a gagné le film "Le Seigneur des Anneaux: Le retour du roi"?', '11', '1', '5' , '8');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Lequel de ces films n''appartient pas à Disney?', 'L''Étrange Noël de monsieur Jack ', 'Frozen', 'John Carter' , 'Toy Story');
+EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Lequel de ces films n''appartient pas à Disney?', 'L Étrange Noël de monsieur Jack ', 'Frozen', 'John Carter' , 'Toy Story');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Qui est le chanteur du groupe Pink Floyd?', 'Roger Water', 'Daniel Craig', 'Freddie Mercury' , 'Ray Manzarek');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','À quel groupe appartient la chanson "Fear of the dark"?', 'Iron Maiden', 'Pink Floyd', 'Attila' , 'Metallica');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Quel groupe de musique est connu pour écrire des chansons vulgaires?', 'Attila', 'Periphery', 'Disturbed' , 'Our last night');
@@ -104,8 +104,8 @@ EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Di','Qui est l''acteur principal d
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Lequel parmi les instruments suivant ne permet pas de mesurer le volume?', 'Éprouvette', 'Erlenmeyer', 'Ballon' , 'Bécher');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Que représente le NaCl dans la vie de tous les jours?', 'Sel de table', 'Bicarbonate de soude', 'Sable' , 'Farine');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quel est le symbole chimique du Magnésium?', 'Mg', 'Me', 'Ma' , 'Mm');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quel mélange de solution est réputé pour créer un "volcan"?', 'Le bicarbonate de soude et le vinaigre', 'Le vinaigre et l''huile', 'L''huile et le bicarbonate de soude' , 'Le vinaigre et le sel de table');
-EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quelle partie du corps est affectée lorsqu''on fume la cigarette?', 'Les poumons', 'Le foie', 'Le larynx' , 'L''oesophage');
+EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quel mélange de solution est réputé pour créer un "volcan"?', 'Le bicarbonate de soude et le vinaigre', 'Le vinaigre et l huile', 'L huile et le bicarbonate de soude' , 'Le vinaigre et le sel de table');
+EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quelle partie du corps est affectée lorsqu''on fume la cigarette?', 'Les poumons', 'Le foie', 'Le larynx' , 'L oesophage');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quel processus chimique permet la fabrication de l''alcool', 'Fermentation', 'Respiration cellulaire', 'Amplification des levres' , 'Culture des levres');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Quelle structure du corps permet le renouvellement des tissus, des organes, etc.?', 'Cellules souches de la moelle osseuse', 'cellules embryonnaires', 'Cellules transformées' , 'Aucune des ces réponses');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Question('Sc','Lequel des composés suivant n''est pas un sucre?', 'Lipides', 'Lactose', 'Glucose' , 'Surose');

@@ -129,34 +129,42 @@ namespace TP1_BD
             /////////////////////////////////////////////
             //          Questions Réussites
             /////////////////////////////////////////////
-            string SQLAfficher = "SELECT SUM(SCORE) FROM SCORES WHERE USERNAME = '" + Alias + "'";
-
-            OracleCommand orcmd = new OracleCommand(SQLAfficher, Connexion.oraconn);
-            orcmd.CommandType = CommandType.Text;
-            OracleDataReader orareader = orcmd.ExecuteReader();
-
-            if (orareader.Read())
+            if (TB_NbPartiesJoues.Text != "0")
             {
-                TB_QReussites.Text = orareader.GetInt32(0).ToString();
+                string SQLAfficher = "SELECT SUM(SCORE) FROM SCORES WHERE USERNAME = '" + Alias + "'";
+
+                OracleCommand orcmd = new OracleCommand(SQLAfficher, Connexion.oraconn);
+                orcmd.CommandType = CommandType.Text;
+                OracleDataReader orareader = orcmd.ExecuteReader();
+
+                if (orareader.Read())
+                {
+                    TB_QReussites.Text = orareader.GetInt32(0).ToString();
+                }
+                orareader.Close();
+
+
+                /////////////////////////////////////////////
+                //          Questions Ratées
+                /////////////////////////////////////////////
+                string SQLAfficher1 = "SELECT SUM(NBQuestionsRepondues) FROM SCORES WHERE USERNAME = '" + Alias + "'";
+
+                OracleCommand orcmd2 = new OracleCommand(SQLAfficher1, Connexion.oraconn);
+                orcmd2.CommandType = CommandType.Text;
+                OracleDataReader orareader2 = orcmd2.ExecuteReader();
+
+                if (orareader2.Read())
+                {
+                    TB_QRates.Text = (orareader2.GetInt32(0) - Convert.ToInt32(TB_QReussites.Text)).ToString();
+                }
+                orareader2.Close();
+
             }
-            orareader.Close();
-
-            /////////////////////////////////////////////
-            //          Questions Ratées
-            /////////////////////////////////////////////
-            string SQLAfficher1 = "SELECT SUM(NBQuestionsRepondues) FROM SCORES WHERE USERNAME = '" + Alias + "'";
-
-            OracleCommand orcmd2 = new OracleCommand(SQLAfficher1, Connexion.oraconn);
-            orcmd2.CommandType = CommandType.Text;
-            OracleDataReader orareader2 = orcmd2.ExecuteReader();
-
-            if (orareader2.Read())
+            else
             {
-                TB_QRates.Text = (orareader2.GetInt32(0) - Convert.ToInt32(TB_QReussites.Text)).ToString();
+                TB_QRates.Text = "0";
+                TB_QReussites.Text = "0";
             }
-            orareader2.Close();
-
-
         }
         #endregion
 
@@ -177,10 +185,20 @@ namespace TP1_BD
         #region Stats Catégories
         private void AfficherStatsCategories()
         {
-            StatsSport();
-            StatsDivertissement();
-            StatsJeuxVideo();
-            StatsScience();
+            if(TB_NbPartiesJoues.Text != "0")
+            {
+                StatsSport();
+                StatsDivertissement();
+                StatsJeuxVideo();
+                StatsScience();
+            }
+            else
+            {
+                TB_Science.Text = "0";
+                TB_Sport.Text = "0";
+                TB_Divertissement.Text = "0";
+                TB_JeuxVideo.Text = "0";
+            }
         }
 
         private void StatsSport()

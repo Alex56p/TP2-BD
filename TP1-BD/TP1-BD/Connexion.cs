@@ -58,7 +58,11 @@ namespace TP1_BD
         private void BTN_Inscription_Click(object sender, EventArgs e)
         {
             Inscription inscription = new Inscription();
-            inscription.ShowDialog();
+            
+            if (inscription.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Alias = inscription.Alias;
+            }
             CheckButton();
         }
 
@@ -104,7 +108,6 @@ namespace TP1_BD
             else
             {
                 BTN_Connexion.Enabled = false;
-                BTN_Connexion.DialogResult = System.Windows.Forms.DialogResult.None;
             }
         }
 

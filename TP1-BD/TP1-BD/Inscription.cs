@@ -20,6 +20,8 @@ namespace TP1_BD
             CheckAlias();
         }
 
+        public string Alias;
+
         /// <summary>
         /// CheckButton
         /// Permet de changer le enable sur le boutton ajouter quand les text box ne sont pas vide
@@ -104,6 +106,8 @@ namespace TP1_BD
                 oraAjout.Parameters.Add(oranom);
                 oraAjout.Parameters.Add(oraprenom);
                 oraAjout.ExecuteNonQuery();
+
+                Alias = TB_Alias.Text;
 
                 MessageBox.Show("Le joueur a été ajouté");
             }

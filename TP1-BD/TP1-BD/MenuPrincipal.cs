@@ -19,15 +19,14 @@ namespace TP1_BD
         {
             Connexion conn = new Connexion();
             conn.ShowDialog();
+            while (conn.DialogResult != System.Windows.Forms.DialogResult.OK)
+            {
+               conn.ShowDialog();
+            }
+            Alias = conn.Alias;
+
             InitializeComponent();
-            if (conn.DialogResult != System.Windows.Forms.DialogResult.OK)
-            {
-                this.Close();
-            }
-            else
-            {
-                Alias = conn.Alias;
-            }
+
 
             AfficherTB();
         }
