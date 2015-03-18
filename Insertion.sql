@@ -17,6 +17,7 @@ INSERT INTO CATEGORIES VALUES('Di', 'Divertissement', 'Rose');
 ------------------------------------
 --            Joueurs             -- 
 ------------------------------------
+EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('Admin', 'min', 'Ad');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('PoneyLoverXz', 'Voyez', 'Anthony');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('Alex56p', 'Parent', 'Alexis');
 EXECUTE GESTIONINTELLICRACK.Ajouter_Joueur('xLeafing', 'Caron', 'Samuel');
