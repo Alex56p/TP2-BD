@@ -55,6 +55,7 @@
             this.TB_NombreDefaites = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CB_Alias = new System.Windows.Forms.ComboBox();
+            this.BTN_Delete = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -340,12 +341,23 @@
             this.CB_Alias.TabIndex = 27;
             this.CB_Alias.SelectedIndexChanged += new System.EventHandler(this.CB_Alias_SelectedIndexChanged);
             // 
+            // BTN_Delete
+            // 
+            this.BTN_Delete.Location = new System.Drawing.Point(334, 60);
+            this.BTN_Delete.Name = "BTN_Delete";
+            this.BTN_Delete.Size = new System.Drawing.Size(111, 23);
+            this.BTN_Delete.TabIndex = 28;
+            this.BTN_Delete.Text = "Supprimer le Joueur";
+            this.BTN_Delete.UseVisualStyleBackColor = true;
+            this.BTN_Delete.Click += new System.EventHandler(this.BTN_Delete_Click);
+            // 
             // StatsJoueur
             // 
             this.AcceptButton = this.BTN_Ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 478);
+            this.Controls.Add(this.BTN_Delete);
             this.Controls.Add(this.CB_Alias);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.groupBox2);
@@ -391,5 +403,6 @@
         private System.Windows.Forms.TextBox TB_NombreDefaites;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CB_Alias;
+        private System.Windows.Forms.Button BTN_Delete;
     }
 }

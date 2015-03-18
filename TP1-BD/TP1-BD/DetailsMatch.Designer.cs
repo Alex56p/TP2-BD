@@ -34,7 +34,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.TB_Sport = new System.Windows.Forms.TextBox();
             this.TB_Divertissement = new System.Windows.Forms.TextBox();
             this.TB_JeuxVideo = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.BTN_Precedent = new System.Windows.Forms.Button();
             this.BTN_Suivant = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,18 +123,9 @@
             this.label12.TabIndex = 29;
             this.label12.Text = "Points";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(239, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 18);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Points";
-            // 
             // TB_Sport
             // 
+            this.TB_Sport.BackColor = System.Drawing.SystemColors.Control;
             this.TB_Sport.Location = new System.Drawing.Point(133, 20);
             this.TB_Sport.Name = "TB_Sport";
             this.TB_Sport.ReadOnly = true;
@@ -265,6 +256,16 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Détails du Match";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(239, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 18);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Points";
+            // 
             // DetailsMatch
             // 
             this.AcceptButton = this.BTN_Ok;
@@ -297,7 +298,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TB_Sport;
         private System.Windows.Forms.TextBox TB_Divertissement;
         private System.Windows.Forms.TextBox TB_JeuxVideo;
@@ -312,5 +312,6 @@
         private System.Windows.Forms.Button BTN_Precedent;
         private System.Windows.Forms.Button BTN_Suivant;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
     }
 }

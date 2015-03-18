@@ -89,6 +89,12 @@ namespace TP1_BD
 
         private void AfficherPoints()
         {
+            TB_JeuxVideo.BackColor = SystemColors.Control;
+            TB_Divertissement.BackColor = SystemColors.Control;
+            TB_Science.BackColor = SystemColors.Control;
+            TB_Sport.BackColor = SystemColors.Control;
+
+
             string SQLAfficher = "SELECT SCORE FROM SCORES WHERE NUMMATCH = " + Jeu.NumMatch + " AND USERNAME = '" + LB_Alias.Text + "' ORDER BY CODECATEGORIE";
             OracleCommand orcmd1 = new OracleCommand(SQLAfficher, Connexion.oraconn);
             orcmd1.CommandType = CommandType.Text;
@@ -109,7 +115,92 @@ namespace TP1_BD
             {
                 TB_Sport.Text = oraread.GetInt32(0).ToString();
             }
+
+            AfficherPireCategorie();
+            AfficherCategoriesGagnees();
             oraread.Close();
+        }
+
+        private void AfficherPireCategorie()
+        {
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.Afficher_Pire_Categorie";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("Categories", OracleDbType.Char,2);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
+
+            // Paramètre Joueur1
+            OracleParameter OraJ1 = new OracleParameter("F_J1", OracleDbType.Varchar2, 30);
+            OraJ1.Value = LB_Alias.Text;
+            OraJ1.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ1);
+
+            // Paramètre Joueur1
+            OracleParameter OraNumMatch = new OracleParameter("FNumMatch", OracleDbType.Int32);
+            OraNumMatch.Value = Jeu.NumMatch;
+            OraNumMatch.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraNumMatch);
+
+            try
+            {
+                oraliste.ExecuteNonQuery();
+                string cat = oraliste.Parameters["Categories"].Value.ToString();
+
+                if (cat == "Sp")
+                    TB_Sport.BackColor = Color.IndianRed;
+                else if (cat == "Sc")
+                    TB_Science.BackColor = Color.IndianRed;
+                else if (cat == "Di")
+                    TB_Divertissement.BackColor = Color.IndianRed;
+                else if (cat == "Jv")
+                    TB_JeuxVideo.BackColor = Color.IndianRed;
+             }
+            catch(Exception ex)
+            {
+
+            }
+            
+        }
+
+        private void AfficherCategoriesGagnees()
+        {
+            OracleCommand oraliste = new OracleCommand("GESTIONINTELLICRACK", Connexion.oraconn);
+            oraliste.CommandText = "GESTIONINTELLICRACK.Afficher_Categorie_Gagne";
+            oraliste.CommandType = CommandType.StoredProcedure;
+
+            // Return Value
+            OracleParameter OrapameResultat = new OracleParameter("Categories", OracleDbType.RefCursor);
+            OrapameResultat.Direction = ParameterDirection.ReturnValue;
+            oraliste.Parameters.Add(OrapameResultat);
+
+            // Paramètre Joueur1
+            OracleParameter OraJ1 = new OracleParameter("F_J1", OracleDbType.Varchar2, 30);
+            OraJ1.Value = LB_Alias.Text;
+            OraJ1.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraJ1);
+
+            // Paramètre Joueur1
+            OracleParameter OraNumMatch = new OracleParameter("FNumMatch", OracleDbType.Int32);
+            OraNumMatch.Value = Jeu.NumMatch;
+            OraNumMatch.Direction = ParameterDirection.Input;
+            oraliste.Parameters.Add(OraNumMatch);
+
+            OracleDataReader oraread = oraliste.ExecuteReader();
+
+            while(oraread.Read())
+            {
+                if (oraread.GetString(0) == "Sc")
+                    TB_Science.BackColor = Color.LightGreen;
+                else if (oraread.GetString(0) == "Sp")
+                    TB_Sport.BackColor = Color.LightGreen;
+                else if (oraread.GetString(0) == "Di")
+                    TB_Divertissement.BackColor = Color.LightGreen;
+                else if (oraread.GetString(0) == "Jv")
+                    TB_JeuxVideo.BackColor = Color.LightGreen;
+             }
         }
         #endregion
     }

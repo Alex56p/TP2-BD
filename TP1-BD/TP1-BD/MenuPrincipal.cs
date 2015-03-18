@@ -77,8 +77,16 @@ namespace TP1_BD
         /// <param name="e"></param>
         private void BTN_AjouterQuestion_Click(object sender, EventArgs e)
         {
-            AjouterQuestion ajouterQuestion = new AjouterQuestion();
-            ajouterQuestion.ShowDialog();
+            if(TB_Alias.Text == "Admin")
+            {
+                AjouterQuestion ajouterQuestion = new AjouterQuestion();
+                ajouterQuestion.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez être Admin pour ajouter des questions.");
+            }
+            
         }
         #endregion
 

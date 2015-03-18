@@ -54,6 +54,8 @@ namespace TP1_BD
 
         private void AfficherAlias()
         {
+            CB_Alias.Items.Clear();
+
             string SQLAfficher = "SELECT USERNAME FROM JOUEURS";
             
             OracleCommand orcmd = new OracleCommand(SQLAfficher, Connexion.oraconn);
@@ -67,8 +69,9 @@ namespace TP1_BD
             if (Alias == null)
             {
                 Alias = CB_Alias.Items[0].ToString();
-                CB_Alias.SelectedItem = Alias;
+                CB_Alias.SelectedIndex = 0;
             }
+
             orareader.Close();
 
         }
@@ -264,5 +267,52 @@ namespace TP1_BD
             orareader.Close();
         }
         #endregion
+
+        private void BTN_Delete_Click(object sender, EventArgs e)
+        { 
+            // Get les matchs de ce joueur
+            string SQL = "SELECT NUMMATCH FROM MATCH WHERE JOUEUR1 = '"+ Alias+ "' OR JOUEUR2 = '" + Alias  + "' OR JOUEUR3 = '" + Alias  + "' OR JOUEUR4 = '" + Alias + "'";
+            OracleCommand oracleupdate = new OracleCommand(SQL, Connexion.oraconn);
+            oracleupdate.CommandType = CommandType.Text;
+            OracleDataReader oraread = oracleupdate.ExecuteReader();
+
+            List<int> list = new List<int>();
+            while (oraread.Read())
+            {
+                list.Add(oraread.GetInt32(0));
+            }
+            oraread.Close();
+
+            // Supprime les scores où il a participé au match
+            for(int i = 0; i < list.Count; i++)
+            {
+                SQL = "DELETE FROM SCORES WHERE NumMatch = " + list.ElementAt(i);
+
+                oracleupdate = new OracleCommand(SQL, Connexion.oraconn);
+                oracleupdate.CommandType = CommandType.Text;
+                oracleupdate.ExecuteNonQuery();
+            }
+
+            //Supprimer les matchs
+            for(int i = 0; i < list.Count; i++)
+            {
+                SQL = "DELETE FROM Match WHERE NumMatch = " + list.ElementAt(i);
+
+                oracleupdate = new OracleCommand(SQL, Connexion.oraconn);
+                oracleupdate.CommandType = CommandType.Text;
+                oracleupdate.ExecuteNonQuery();
+            }
+
+
+            SQL = "DELETE FROM JOUEURS WHERE USERNAME = '" + Alias + "'";
+
+            oracleupdate = new OracleCommand(SQL, Connexion.oraconn);
+            oracleupdate.CommandType = CommandType.Text;
+            oracleupdate.ExecuteNonQuery();
+
+            Alias = null;
+            AfficherAlias();
+            AfficherStatsGenerales();
+        }
     }
 }
