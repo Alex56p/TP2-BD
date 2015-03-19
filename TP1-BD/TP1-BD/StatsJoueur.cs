@@ -107,7 +107,7 @@ namespace TP1_BD
             oraliste.CommandType = CommandType.StoredProcedure;
 
             // Return Value
-            OracleParameter OrapameResultat = new OracleParameter("NbVictoires", OracleDbType.Int32);
+            OracleParameter OrapameResultat = new OracleParameter("NbVictoires", OracleDbType.RefCursor);
             OrapameResultat.Direction = ParameterDirection.ReturnValue;
             oraliste.Parameters.Add(OrapameResultat);
 
@@ -117,9 +117,10 @@ namespace TP1_BD
             OraJ.Direction = ParameterDirection.Input;
             oraliste.Parameters.Add(OraJ);
 
-            oraliste.ExecuteNonQuery();
+            OracleDataReader oraread = oraliste.ExecuteReader();
 
-            TB_NombreVictoires.Text = oraliste.Parameters["NbVictoires"].Value.ToString();
+            if (oraread.Read())
+               TB_NombreVictoires.Text = oraread.GetInt32(0).ToString();
 
 
             //Nombre de défaites
